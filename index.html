@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Gimnasia Cerebral para Adultos | Evolucione</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colores Evolucione */
+            --magenta: #E91E8C;
+            --magenta-dark: #C4177A;
+            --magenta-light: #FF4DA6;
+            --purple: #8B2FC9;
+            --orange: #FF8C00;
+            --orange-light: #FFA033;
+            --cyan: #00D4D4;
+            --cyan-light: #33E0E0;
+            
+            /* Neutros */
+            --white: #FFFFFF;
+            --cream: #FFF9F5;
+            --light-gray: #F5F5F5;
+            --gray: #6B7280;
+            --dark: #1F2937;
+            
+            /* Tipografía */
+            --font-main: 'Sora', sans-serif;
+            
+            /* Espaciado generoso para adultos mayores */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            
+            /* Radios redondeados */
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 30px;
+            --radius-full: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* ============================================
+           HEADER NAV
+        ============================================ */
+        .header {
+            background: var(--white);
+            padding: var(--space-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__logo {
+            height: 50px;
+        }
+
+        .header__cta {
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--purple) 100%);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .header__cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 30, 140, 0.4);
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--purple) 50%, var(--orange) 100%);
+            padding: var(--space-xl) 0 var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--cyan);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            background: var(--orange);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .hero__content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero__title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: var(--space-sm);
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .hero__subtitle {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--cyan-light);
+            margin-bottom: var(--space-md);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero__description {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero__image {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero__image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+        }
+
+        @media (max-width: 900px) {
+            .hero__image {
+                order: -1;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+
+        /* ============================================
+           VIDEO SECTION
+        ============================================ */
+        .video-section {
+            background: var(--white);
+            padding: var(--space-xl) 0;
+            margin-top: -60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-wrapper {
+            background: var(--dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .play-btn {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--orange) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 15px 50px rgba(233, 30, 140, 0.5);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+            margin-left: 5px;
+        }
+
+        .video-text {
+            color: white;
+            font-size: 1.1rem;
+            margin-top: var(--space-md);
+            text-align: center;
+        }
+
+        /* ============================================
+           CTA BUTTONS
+        ============================================ */
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-dark) 100%);
+            color: white;
+            font-family: var(--font-main);
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(233, 30, 140, 0.4);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(233, 30, 140, 0.5);
+        }
+
+        .cta-primary svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            background: var(--cyan);
+            color: var(--dark);
+            font-family: var(--font-main);
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 212, 212, 0.4);
+        }
+
+        .cta-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 212, 212, 0.5);
+        }
+
+        /* ============================================
+           SECTION HEADERS
+        ============================================ */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-eyebrow {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--magenta);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ============================================
+           IDENTIFICACIÓN (El Problema)
+        ============================================ */
+        .identification {
+            background: var(--light-gray);
+            padding: var(--space-2xl) 0;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .pain-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .pain-card__icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--orange) 0%, var(--magenta) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pain-card__icon svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+        }
+
+        .pain-card__text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .identification__cta {
+            text-align: center;
+            margin-top: var(--space-xl);
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-light) 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .identification__cta p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* ============================================
+           LA SOLUCIÓN
+        ============================================ */
+        .solution {
+            background: var(--white);
+            padding: var(--space-2xl) 0;
+        }
+
+        .solution__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        @media (max-width: 800px) {
+            .solution__content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .solution__image {
+            text-align: center;
+        }
+
+        .solution__image img {
+            max-width: 400px;
+            width: 100%;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+        }
+
+        .solution__text h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: var(--space-md);
+            line-height: 1.3;
+        }
+
+        .solution__text p {
+            color: var(--gray);
+            margin-bottom: var(--space-md);
+            font-size: 1.1rem;
+        }
+
+        .solution__highlight {
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--purple) 100%);
+            color: white;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-lg);
+        }
+
+        .solution__highlight p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+        }
+
+        /* ============================================
+           QUÉ ES EL CURSO
+        ============================================ */
+        .course-details {
+            background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+            padding: var(--space-2xl) 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 800px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--magenta);
+            transform: translateY(-5px);
+        }
+
+        .feature-card__icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--purple) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+        }
+
+        .feature-card__icon svg {
+            width: 36px;
+            height: 36px;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: var(--space-xs);
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        /* Pasos de uso */
+        .how-to-use {
+            margin-top: var(--space-xl);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .how-to-use h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: var(--space-lg);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+        }
+
+        @media (max-width: 700px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step__number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-light) 100%);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-sm);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           BENEFICIOS
+        ============================================ */
+        .benefits {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--magenta) 50%, var(--orange) 100%);
+            padding: var(--space-2xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .benefits .section-eyebrow,
+        .benefits .section-title {
+            color: white;
+        }
+
+        .benefits .section-title span {
+            color: var(--cyan-light);
+            -webkit-text-fill-color: var(--cyan-light);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 600px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .benefit-item__icon {
+            flex-shrink: 0;
+            width: 55px;
+            height: 55px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-item__icon svg {
+            width: 26px;
+            height: 26px;
+            color: var(--magenta);
+        }
+
+        .benefit-item span {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .benefits__quote {
+            margin-top: var(--space-xl);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefits__quote blockquote {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           TESTIMONIOS
+        ============================================ */
+        .testimonials {
+            background: var(--white);
+            padding: var(--space-2xl) 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card__image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: var(--space-md);
+            border: 4px solid var(--magenta);
+        }
+
+        .testimonial-card__quote {
+            font-size: 1.05rem;
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: var(--space-md);
+            line-height: 1.6;
+        }
+
+        .testimonial-card__name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .testimonial-card__stars {
+            margin-top: var(--space-xs);
+            color: var(--orange);
+            font-size: 1.2rem;
+        }
+
+        /* ============================================
+           MILENA SANDOVAL
+        ============================================ */
+        .instructor {
+            background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+            padding: var(--space-2xl) 0;
+        }
+
+        .instructor__content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .instructor__content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .instructor__image {
+            position: relative;
+        }
+
+        .instructor__image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: var(--radius-lg);
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+        }
+
+        .instructor__text h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--magenta);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .instructor__text h3 {
+            font-size: clamp(1.8rem, 4vw, 2.3rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .instructor__text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: var(--space-md);
+        }
+
+        .instructor__name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .instructor__title {
+            font-size: 1rem;
+            color: var(--magenta);
+            font-weight: 600;
+        }
+
+        .instructor__social {
+            margin-top: var(--space-md);
+        }
+
+        .instructor__social a {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--magenta);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .instructor__social a:hover {
+            color: var(--purple);
+        }
+
+        .instructor__social svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ============================================
+           PARA QUIÉN ES / NO ES
+        ============================================ */
+        .audience {
+            background: var(--white);
+            padding: var(--space-2xl) 0;
+        }
+
+        .audience__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 700px) {
+            .audience__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .audience__card {
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+        }
+
+        .audience__card--yes {
+            background: linear-gradient(135deg, rgba(0, 212, 212, 0.1) 0%, rgba(0, 212, 212, 0.05) 100%);
+            border: 3px solid var(--cyan);
+        }
+
+        .audience__card--no {
+            background: var(--light-gray);
+            border: 3px solid #ddd;
+        }
+
+        .audience__card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .audience__card--yes h3 {
+            color: #00A0A0;
+        }
+
+        .audience__card--no h3 {
+            color: var(--gray);
+        }
+
+        .audience__card h3 svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .audience__card ul {
+            list-style: none;
+        }
+
+        .audience__card li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: 1.05rem;
+        }
+
+        .audience__card li:last-child {
+            border-bottom: none;
+        }
+
+        .audience__card li svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            margin-top: 2px;
+        }
+
+        .audience__card--yes li svg {
+            color: var(--cyan);
+        }
+
+        .audience__card--no li svg {
+            color: #999;
+        }
+
+        /* ============================================
+           PRECIO Y COMPRA
+        ============================================ */
+        .pricing {
+            background: linear-gradient(135deg, var(--magenta) 0%, var(--purple) 100%);
+            padding: var(--space-2xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--orange);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .pricing__card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .pricing__badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--orange) 0%, var(--magenta) 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+
+        .pricing__title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .pricing__price {
+            margin-bottom: var(--space-lg);
+        }
+
+        .pricing__price-value {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--magenta);
+            line-height: 1;
+        }
+
+        .pricing__price-currency {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray);
+            vertical-align: super;
+        }
+
+        .pricing__price-note {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-top: var(--space-xs);
+        }
+
+        .pricing__features {
+            text-align: left;
+            margin-bottom: var(--space-lg);
+        }
+
+        .pricing__feature {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0;
+            font-size: 1.05rem;
+            color: var(--dark);
+        }
+
+        .pricing__feature svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--cyan);
+        }
+
+        .pricing__cta {
+            width: 100%;
+            font-size: 1.3rem;
+            padding: 1.4rem 2rem;
+        }
+
+        .pricing__guarantee {
+            margin-top: var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .pricing__guarantee svg {
+            width: 20px;
+            height: 20px;
+            color: var(--cyan);
+        }
+
+        /* ============================================
+           FAQ
+        ============================================ */
+        .faq {
+            background: var(--light-gray);
+            padding: var(--space-2xl) 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .faq-item__question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: var(--space-md) var(--space-lg);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+            font-family: var(--font-main);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--dark);
+            transition: background 0.2s ease;
+        }
+
+        .faq-item__question:hover {
+            background: var(--light-gray);
+        }
+
+        .faq-item__question svg {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            color: var(--magenta);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-item__question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-item__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-item__answer {
+            max-height: 300px;
+        }
+
+        .faq-item__answer-inner {
+            padding: 0 var(--space-lg) var(--space-lg);
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        /* ============================================
+           CTA FINAL
+        ============================================ */
+        .final-cta {
+            background: var(--white);
+            padding: var(--space-2xl) 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .final-cta__values {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .final-cta__value {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .final-cta__value:nth-child(1) {
+            color: var(--magenta);
+        }
+
+        .final-cta__value:nth-child(2) {
+            color: var(--purple);
+        }
+
+        .final-cta__value:nth-child(3) {
+            color: var(--cyan);
+        }
+
+        .final-cta__value svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: var(--space-lg) 0;
+            text-align: center;
+        }
+
+        .footer__logo {
+            height: 40px;
+            margin-bottom: var(--space-md);
+            filter: brightness(0) invert(1);
+        }
+
+        .footer p {
+            margin-bottom: var(--space-xs);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           ANIMACIONES
+        ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 480px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                padding: 0 var(--space-sm);
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+            }
+
+            .pricing__price-value {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <img src="https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/logo-evolucione-1-scaled.png" alt="Evolucione" class="header__logo">
+                <a href="https://pay.hotmart.com/C103235667V" class="header__cta">Inscribirme ahora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <div class="hero__badge">
+                        ✨ Curso 100% Online · Acceso Inmediato
+                    </div>
+                    <h1 class="hero__title">CURSO DE GIMNASIA CEREBRAL PARA ADULTOS</h1>
+                    <p class="hero__subtitle">Exponencialmente Ágil</p>
+                    <p class="hero__description">
+                        Ejercicios simples y divertidos para mantener tu mente activa, clara y segura. Diseñado especialmente para personas mayores de 50 años que quieren cuidar su bienestar mental.
+                    </p>
+                    <a href="https://pay.hotmart.com/C103235667V" class="cta-primary">
+                        Quiero inscribirme
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="hero__image">
+                    <img src="ema_milena_3.png" alt="Milena Sandoval - Gimnasia Cerebral">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <p class="video-text">▶ Mira el video explicativo (6 minutos)</p>
+        </div>
+    </section>
+
+    <!-- IDENTIFICACIÓN -->
+    <section class="identification">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">¿Te identificas?</p>
+                <h2 class="section-title">¿Esto te <span>pasa a ti</span>?</h2>
+            </div>
+
+            <div class="pain-grid">
+                <div class="pain-card animate-on-scroll">
+                    <div class="pain-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <p class="pain-card__text">Entras a una habitación y olvidas a qué ibas</p>
+                </div>
+
+                <div class="pain-card animate-on-scroll">
+                    <div class="pain-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <p class="pain-card__text">Buscas una palabra conocida y no te sale</p>
+                </div>
+
+                <div class="pain-card animate-on-scroll">
+                    <div class="pain-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <p class="pain-card__text">Te distraes con facilidad o te sientes mentalmente cansado</p>
+                </div>
+
+                <div class="pain-card animate-on-scroll">
+                    <div class="pain-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <p class="pain-card__text">Tienes que releer para entender o pierdes el hilo</p>
+                </div>
+            </div>
+
+            <div class="identification__cta animate-on-scroll">
+                <p>No es grave. Pero cuando se repite, incomoda.<br><strong>La buena noticia: puedes hacer algo hoy.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUCIÓN -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution__content">
+                <div class="solution__image animate-on-scroll">
+                    <img src="EMA_EXPLICACION.png" alt="Curso online fácil de usar">
+                </div>
+                <div class="solution__text animate-on-scroll">
+                    <h2>La mente también se puede entrenar. Y es más fácil de lo que crees.</h2>
+                    <p>
+                        Así como el cuerpo agradece moverse un poco cada día, la mente también responde cuando la activamos de forma adecuada.
+                    </p>
+                    <p>
+                        No con esfuerzos extremos. No con ejercicios complicados. Sino con <strong>movimientos simples y divertidos</strong> que ayudan a despejar la cabeza, a estar más presente y a sentir más confianza al pensar.
+                    </p>
+                    <div class="solution__highlight">
+                        <p>"No se trata de cambiar quién eres. Se trata de cuidar lo que ya tienes."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUÉ ES EL CURSO -->
+    <section class="course-details">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">El Curso</p>
+                <h2 class="section-title">¿Qué incluye el <span>curso</span>?</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Videos de 1-2 minutos</h3>
+                    <p>Ejercicios muy cortos que puedes hacer en cualquier momento</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Sin evaluaciones</h3>
+                    <p>No hay exámenes ni forma de hacerlo "mal"</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3>A tu ritmo</h3>
+                    <p>Sin horarios, sin presión. Repite cuando quieras</p>
+                </div>
+            </div>
+
+            <div class="how-to-use animate-on-scroll">
+                <h3>¿Cómo funciona?</h3>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step__number">1</div>
+                        <p>Entras desde tu computadora o celular</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">2</div>
+                        <p>Reproduces los videos con un clic</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">3</div>
+                        <p>Sigues los ejercicios con calma</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">4</div>
+                        <p>Repites cuando quieras</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">Resultados</p>
+                <h2 class="section-title">Lo que vas a <span>sentir</span></h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <span>Mente más despejada y clara</span>
+                </div>
+
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <span>Menos tensión en el cuerpo</span>
+                </div>
+
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <span>Más atención y enfoque</span>
+                </div>
+
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span>Mayor confianza al pensar</span>
+                </div>
+            </div>
+
+            <div class="benefits__quote animate-on-scroll">
+                <blockquote>
+                    "El beneficio más poderoso no es solo cognitivo: es sentirte más presente, más tranquilo, más tú."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">Testimonios</p>
+                <h2 class="section-title">Lo que dicen <span>nuestros alumnos</span></h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <img src="Maria.jpg" alt="María Gómez" class="testimonial-card__image">
+                    <p class="testimonial-card__quote">
+                        "Al principio no sabía si iba a entender cómo usar el curso. Pero es tan simple que sorprende. Apenas 2 minutos cada día y noto la mente más tranquila, menos ansiosa. Es exactamente lo que necesitaba."
+                    </p>
+                    <p class="testimonial-card__name">María Gómez</p>
+                    <div class="testimonial-card__stars">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <img src="roberto.jpg" alt="Roberto Sánchez" class="testimonial-card__image">
+                    <p class="testimonial-card__quote">
+                        "La tranquilidad mental es más valiosa de lo que creía. Estos ejercicios me ayudaron a entender que cuidar la mente es como cuidar el cuerpo. Ahora me siento más seguro en mis decisiones diarias."
+                    </p>
+                    <p class="testimonial-card__name">Roberto Sánchez</p>
+                    <div class="testimonial-card__stars">★★★★★</div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <img src="claudia.jpg" alt="Claudia Morales" class="testimonial-card__image">
+                    <p class="testimonial-card__quote">
+                        "Lo que me resulta más útil es que es un curso que respeta mi ritmo. No me obliga a nada, pero siento que estoy haciendo algo importante por mí. Eso es lo que buscaba."
+                    </p>
+                    <p class="testimonial-card__name">Claudia Morales</p>
+                    <div class="testimonial-card__stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MILENA SANDOVAL -->
+    <section class="instructor">
+        <div class="container">
+            <div class="instructor__content">
+                <div class="instructor__image animate-on-scroll">
+                    <img src="ema_milena_4.png" alt="Milena Sandoval">
+                </div>
+                <div class="instructor__text animate-on-scroll">
+                    <h2>Quién está detrás de este curso</h2>
+                    <h3>Conoce a tu instructora</h3>
+                    <p>
+                        Este curso fue diseñado e impartido por <strong>Milena Sandoval</strong>, especialista en entrenamiento mental con más de dos décadas de experiencia real.
+                    </p>
+                    <p>
+                        Su enfoque es práctico y respetuoso. Olvida las promesas mágicas; aquí aprenderás técnicas probadas para mejorar tu coordinación y atención de forma divertida.
+                    </p>
+                    <p class="instructor__name">Milena Sandoval</p>
+                    <p class="instructor__title">Especialista en Gimnasia Cerebral · CEO de Evolucione</p>
+                    <div class="instructor__social">
+                        <a href="https://www.instagram.com/milena2.sandovall/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Seguir en Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARA QUIÉN ES -->
+    <section class="audience">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">¿Es para ti?</p>
+                <h2 class="section-title">Este curso está <span>pensado para...</span></h2>
+            </div>
+
+            <div class="audience__grid">
+                <div class="audience__card audience__card--yes animate-on-scroll">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Es para ti si...
+                    </h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Valoras tu autonomía y quieres mantenerla
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Buscas algo práctico y sencillo
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Prefieres prevenir antes que preocuparte
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Te importa mantener tu claridad mental
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="audience__card audience__card--no animate-on-scroll">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        No es para ti si...
+                    </h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Buscas un tratamiento médico
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Esperas resultados mágicos o instantáneos
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Quieres algo intenso o competitivo
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Tienes limitación motora sin supervisión
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRECIO Y COMPRA -->
+    <section class="pricing" id="comprar">
+        <div class="container">
+            <div class="pricing__card animate-on-scroll">
+                <div class="pricing__badge">🎉 Oferta de Lanzamiento</div>
+                <h2 class="pricing__title">Acceso completo al curso</h2>
+                
+                <div class="pricing__price">
+                    <span class="pricing__price-currency">$</span>
+                    <span class="pricing__price-value">300</span>
+                    <span class="pricing__price-currency">MXN</span>
+                    <p class="pricing__price-note">Pago único · Acceso de por vida</p>
+                </div>
+
+                <div class="pricing__features">
+                    <div class="pricing__feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Videos cortos y fáciles de seguir
+                    </div>
+                    <div class="pricing__feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Acceso inmediato por correo electrónico
+                    </div>
+                    <div class="pricing__feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Sin horarios · A tu ritmo
+                    </div>
+                    <div class="pricing__feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Repite los ejercicios las veces que quieras
+                    </div>
+                </div>
+
+                <a href="https://pay.hotmart.com/C103235667V" class="cta-primary pricing__cta">
+                    Inscribirme ahora
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+
+                <p class="pricing__guarantee">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Garantía de 7 días · Devolución sin preguntas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">Preguntas Frecuentes</p>
+                <h2 class="section-title">Respuestas <span>honestas</span></h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿No soy muy grande para esto?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            No. Los ejercicios están pensados específicamente para adultos. No hay edad límite para empezar a cuidar tu mente. De hecho, este es el momento ideal.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "No soy bueno con la tecnología."
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            Los videos son muy simples y fáciles de usar. Entras con un clic desde el enlace que te llega al correo. Si puedes ver un video en internet, puedes usar este curso.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿Y si no soy constante?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            No pasa nada. No hay exigencias. El curso no te presiona. Cada ejercicio cuenta, incluso cuando haces poco. Está ahí para cuando lo necesites.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿Cuánto tiempo necesito al día?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            Pocos minutos. Los ejercicios duran 1 a 2 minutos cada uno. Tú decides cuántos haces y cuándo. No hay un mínimo obligatorio.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿Es un tratamiento médico?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            No. Este curso no reemplaza atención médica. Es una herramienta de bienestar cotidiano, como caminar o estirarse, pero pensada para la mente.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>Cuidar tu mente es una forma de seguir siendo tú.</h2>
+
+                <div class="final-cta__values">
+                    <div class="final-cta__value">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Con claridad
+                    </div>
+                    <div class="final-cta__value">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Con confianza
+                    </div>
+                    <div class="final-cta__value">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Con calma
+                    </div>
+                </div>
+
+                <a href="https://pay.hotmart.com/C103235667V" class="cta-primary">
+                    Quiero empezar a cuidar mi mente
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <img src="https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/logo-evolucione-1-scaled.png" alt="Evolucione" class="footer__logo">
+            <p>© 2025 Evolucione. Todos los derechos reservados.</p>
+            <p>
+                <a href="#">Términos y Condiciones</a> · 
+                <a href="#">Política de Privacidad</a> · 
+                <a href="mailto:hola@evolucioneleyendo.com">Contacto</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item__question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
