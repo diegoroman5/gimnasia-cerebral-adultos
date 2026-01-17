@@ -3,6 +3,2379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasia Cerebral | Cuida tu mente con ejercicios simples</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta cálida y serena - inspirada en naturaleza y calma */
+            --color-cream: #FDF8F3;
+            --color-warm-white: #FFFBF7;
+            --color-sand: #E8DFD4;
+            --color-sage: #7A9E7E;
+            --color-sage-dark: #5C7A5F;
+            --color-sage-light: #A8C5AB;
+            --color-terracotta: #C67D4E;
+            --color-terracotta-dark: #A65F32;
+            --color-charcoal: #3D3D3D;
+            --color-warm-gray: #6B6560;
+            --color-light-gray: #B8B2AB;
+            
+            /* Tipografía */
+            --font-display: 'Crimson Pro', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Espaciado generoso para legibilidad */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            
+            /* Radios suaves */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 19px;
+            line-height: 1.7;
+            color: var(--color-charcoal);
+            background-color: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Contenedor principal con máximo ancho para legibilidad */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .container--wide {
+            max-width: 1100px;
+        }
+
+        /* ============================================
+           SECCIÓN 1: HERO
+        ============================================ */
+        .hero {
+            background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-cream) 100%);
+            padding: var(--space-xl) 0 var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--color-sage-light) 0%, transparent 70%);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-sage-light);
+            color: var(--color-sage-dark);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero__badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 500;
+            line-height: 1.25;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-md);
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .hero__title span {
+            color: var(--color-sage-dark);
+        }
+
+        .hero__subtitle {
+            font-size: 1.25rem;
+            color: var(--color-warm-gray);
+            max-width: 650px;
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* Video Container */
+        .hero__video-wrapper {
+            background: var(--color-charcoal);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            margin: var(--space-lg) 0;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero__video {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero__video-placeholder {
+            text-align: center;
+            color: white;
+        }
+
+        .hero__play-btn {
+            width: 90px;
+            height: 90px;
+            background: var(--color-terracotta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 40px rgba(198, 125, 78, 0.4);
+        }
+
+        .hero__play-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 50px rgba(198, 125, 78, 0.5);
+        }
+
+        .hero__play-btn svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
+            margin-left: 4px;
+        }
+
+        .hero__video-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Principal */
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            background: var(--color-terracotta);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: var(--radius-xl);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(198, 125, 78, 0.35);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .cta-primary:hover {
+            background: var(--color-terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(198, 125, 78, 0.45);
+        }
+
+        .cta-primary svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .hero__guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            margin-top: var(--space-md);
+            font-size: 0.95rem;
+            color: var(--color-warm-gray);
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .hero__guarantee svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-sage);
+        }
+
+        /* ============================================
+           SECCIÓN 2: IDENTIFICACIÓN (El Problema)
+        ============================================ */
+        .identification {
+            background: white;
+            padding: var(--space-2xl) 0;
+            border-top: 1px solid var(--color-sand);
+            border-bottom: 1px solid var(--color-sand);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-sage);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 500;
+            color: var(--color-charcoal);
+            line-height: 1.3;
+        }
+
+        .pain-points {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pain-point {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--color-sand);
+        }
+
+        .pain-point:last-child {
+            border-bottom: none;
+        }
+
+        .pain-point__icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--color-cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pain-point__icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color-terracotta);
+        }
+
+        .pain-point__text {
+            font-size: 1.15rem;
+            color: var(--color-charcoal);
+            padding-top: 0.6rem;
+        }
+
+        .identification__close {
+            text-align: center;
+            margin-top: var(--space-xl);
+            padding: var(--space-lg);
+            background: var(--color-cream);
+            border-radius: var(--radius-lg);
+        }
+
+        .identification__close p {
+            font-size: 1.2rem;
+            color: var(--color-charcoal);
+        }
+
+        .identification__close p strong {
+            color: var(--color-sage-dark);
+        }
+
+        /* ============================================
+           SECCIÓN 3: LA SOLUCIÓN (Reencuadre)
+        ============================================ */
+        .solution {
+            background: var(--color-cream);
+            padding: var(--space-2xl) 0;
+        }
+
+        .solution__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .solution__content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .solution__text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-md);
+            line-height: 1.35;
+        }
+
+        .solution__text p {
+            color: var(--color-warm-gray);
+            margin-bottom: var(--space-md);
+            font-size: 1.1rem;
+        }
+
+        .solution__highlight {
+            background: white;
+            border-left: 4px solid var(--color-sage);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: var(--space-lg);
+        }
+
+        .solution__highlight p {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--color-charcoal);
+            font-style: italic;
+            margin: 0;
+        }
+
+        .solution__visual {
+            position: relative;
+        }
+
+        .solution__image {
+            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 100%);
+            border-radius: var(--radius-xl);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution__image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .solution__image-icon {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+
+        .solution__image-icon svg {
+            width: 60px;
+            height: 60px;
+            color: var(--color-sage-dark);
+        }
+
+        /* ============================================
+           SECCIÓN 4: QUÉ ES EL CURSO
+        ============================================ */
+        .course-details {
+            background: white;
+            padding: var(--space-2xl) 0;
+            border-top: 1px solid var(--color-sand);
+        }
+
+        .course-details__intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .course-details__intro p {
+            font-size: 1.15rem;
+            color: var(--color-warm-gray);
+            margin-top: var(--space-md);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--color-cream);
+            border-radius: var(--radius-lg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card__icon {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-card__icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--color-sage-dark);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-xs);
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--color-warm-gray);
+        }
+
+        .course-details__how {
+            margin-top: var(--space-xl);
+            background: var(--color-cream);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+        }
+
+        .course-details__how h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-md);
+            text-align: center;
+        }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+        }
+
+        @media (max-width: 768px) {
+            .how-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .how-step {
+            text-align: center;
+            padding: var(--space-md);
+        }
+
+        .how-step__number {
+            width: 40px;
+            height: 40px;
+            background: var(--color-sage);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-sm);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .how-step p {
+            font-size: 0.95rem;
+            color: var(--color-warm-gray);
+        }
+
+        /* ============================================
+           SECCIÓN 5: BENEFICIOS REALES
+        ============================================ */
+        .benefits {
+            background: linear-gradient(180deg, var(--color-sage-dark) 0%, var(--color-sage) 100%);
+            padding: var(--space-2xl) 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .benefits .section-eyebrow {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .benefits .section-title {
+            color: white;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 600px) {
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit-item__icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-item__icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color-sage-dark);
+        }
+
+        .benefit-item span {
+            font-size: 1.1rem;
+        }
+
+        .benefits__quote {
+            margin-top: var(--space-xl);
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefits__quote blockquote {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            opacity: 0.95;
+            position: relative;
+            padding: 0 var(--space-lg);
+        }
+
+        .benefits__quote blockquote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        /* ============================================
+           SECCIÓN 6: FILTRO DE AUDIENCIA
+        ============================================ */
+        .audience {
+            background: var(--color-cream);
+            padding: var(--space-2xl) 0;
+        }
+
+        .audience__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 768px) {
+            .audience__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .audience__card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 2px solid transparent;
+        }
+
+        .audience__card--yes {
+            border-color: var(--color-sage-light);
+        }
+
+        .audience__card--no {
+            border-color: var(--color-sand);
+        }
+
+        .audience__card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .audience__card--yes h3 {
+            color: var(--color-sage-dark);
+        }
+
+        .audience__card--no h3 {
+            color: var(--color-warm-gray);
+        }
+
+        .audience__card h3 svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .audience__card ul {
+            list-style: none;
+        }
+
+        .audience__card li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-sand);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: 1.05rem;
+        }
+
+        .audience__card li:last-child {
+            border-bottom: none;
+        }
+
+        .audience__card li svg {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            margin-top: 3px;
+        }
+
+        .audience__card--yes li svg {
+            color: var(--color-sage);
+        }
+
+        .audience__card--no li svg {
+            color: var(--color-light-gray);
+        }
+
+        /* ============================================
+           SECCIÓN 7: GARANTÍA Y SEGURIDAD
+        ============================================ */
+        .guarantee {
+            background: white;
+            padding: var(--space-2xl) 0;
+            border-top: 1px solid var(--color-sand);
+        }
+
+        .guarantee__card {
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid var(--color-sage-light);
+        }
+
+        @media (max-width: 600px) {
+            .guarantee__card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .guarantee__badge {
+            width: 120px;
+            height: 120px;
+            background: var(--color-sage);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(122, 158, 126, 0.3);
+        }
+
+        .guarantee__badge span:first-child {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .guarantee__badge span:last-child {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guarantee__content h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-sm);
+        }
+
+        .guarantee__content p {
+            color: var(--color-warm-gray);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .guarantee__content strong {
+            color: var(--color-sage-dark);
+        }
+
+        /* ============================================
+           SECCIÓN 8: PREGUNTAS FRECUENTES
+        ============================================ */
+        .faq {
+            background: var(--color-cream);
+            padding: var(--space-2xl) 0;
+        }
+
+        .faq-list {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-item__question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: var(--space-md) var(--space-lg);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            transition: background 0.2s ease;
+        }
+
+        .faq-item__question:hover {
+            background: var(--color-cream);
+        }
+
+        .faq-item__question svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--color-sage);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-item__question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-item__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-item__answer {
+            max-height: 300px;
+        }
+
+        .faq-item__answer-inner {
+            padding: 0 var(--space-lg) var(--space-lg);
+            color: var(--color-warm-gray);
+            font-size: 1.05rem;
+        }
+
+        /* ============================================
+           SECCIÓN 9: CTA FINAL
+        ============================================ */
+        .final-cta {
+            background: linear-gradient(180deg, white 0%, var(--color-cream) 100%);
+            padding: var(--space-2xl) 0;
+            text-align: center;
+            border-top: 1px solid var(--color-sand);
+        }
+
+        .final-cta__content {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 500;
+            color: var(--color-charcoal);
+            line-height: 1.35;
+            margin-bottom: var(--space-md);
+        }
+
+        .final-cta__values {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .final-cta__value {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 1.1rem;
+            color: var(--color-sage-dark);
+            font-weight: 500;
+        }
+
+        .final-cta__value svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .final-cta .cta-primary {
+            font-size: 1.25rem;
+            padding: 1.4rem 3rem;
+        }
+
+        .final-cta__note {
+            margin-top: var(--space-md);
+            font-size: 0.95rem;
+            color: var(--color-warm-gray);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background: var(--color-charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: var(--space-lg) 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           ANIMACIONES
+        ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE REFINEMENTS
+        ============================================ */
+        @media (max-width: 480px) {
+            body {
+                font-size: 17px;
+            }
+            
+            .container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .hero {
+                padding: var(--space-lg) 0 var(--space-xl);
+            }
+            
+            .cta-primary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         SECCIÓN 1: HERO
+    ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__badge">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Curso online · Acceso inmediato · Videos cortos y claros
+            </div>
+            
+            <h1 class="hero__title">
+                Cuida tu mente con ejercicios simples de <span>gimnasia cerebral</span>. Mantén tu claridad, a tu ritmo.
+            </h1>
+            
+            <p class="hero__subtitle">
+                Un curso online sencillo para personas mayores de 50 que quieren sentirse más despiertas, seguras y tranquilas. Sin horarios, sin presiones.
+            </p>
+
+            <div class="hero__video-wrapper">
+                <div class="hero__video">
+                    <div class="hero__video-placeholder">
+                        <div class="hero__play-btn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <p class="hero__video-text">Ver video explicativo (6 min)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#" class="cta-primary">
+                    Acceder al curso ahora
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+                
+                <p class="hero__guarantee">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Garantía de 7 días · Devolución sin preguntas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 2: IDENTIFICACIÓN (El Problema)
+    ============================================ -->
+    <section class="identification">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">Reconócete aquí</p>
+                <h2 class="section-title">¿Esto te pasa a ti?</h2>
+            </div>
+
+            <div class="pain-points">
+                <div class="pain-point animate-on-scroll">
+                    <div class="pain-point__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <p class="pain-point__text">Entras a una habitación y olvidas a qué ibas.</p>
+                </div>
+
+                <div class="pain-point animate-on-scroll">
+                    <div class="pain-point__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <p class="pain-point__text">Buscas una palabra conocida y no te sale en el momento.</p>
+                </div>
+
+                <div class="pain-point animate-on-scroll">
+                    <div class="pain-point__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <p class="pain-point__text">Te distraes con facilidad o te sientes mentalmente cansado algunos días.</p>
+                </div>
+
+                <div class="pain-point animate-on-scroll">
+                    <div class="pain-point__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <p class="pain-point__text">Notas tensión en el cuello o los hombros cuando estás preocupado.</p>
+                </div>
+
+                <div class="pain-point animate-on-scroll">
+                    <div class="pain-point__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <p class="pain-point__text">Tienes que releer para entender o pierdes el hilo en conversaciones.</p>
+                </div>
+            </div>
+
+            <div class="identification__close animate-on-scroll">
+                <p>No es grave. Pero cuando se repite, incomoda.<br><strong>La buena noticia es que puedes hacer algo hoy.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 3: LA SOLUCIÓN (Reencuadre)
+    ============================================ -->
+    <section class="solution">
+        <div class="container container--wide">
+            <div class="solution__content">
+                <div class="solution__text animate-on-scroll">
+                    <h2>La mente también se puede entrenar. O mejor dicho, acompañar y cuidar.</h2>
+                    <p>
+                        Así como el cuerpo agradece moverse un poco cada día, la mente también responde cuando la activamos de forma adecuada.
+                    </p>
+                    <p>
+                        No con esfuerzos extremos. No con ejercicios complicados. No con teorías difíciles de entender.
+                    </p>
+                    <p>
+                        Sino con <strong>movimientos suaves y conscientes</strong> que ayudan a despejar la cabeza, a estar más presente y a sentir más confianza al pensar.
+                    </p>
+                    
+                    <div class="solution__highlight">
+                        <p>"No se trata de cambiar quién eres. Se trata de cuidar lo que ya tienes."</p>
+                    </div>
+                </div>
+                
+                <div class="solution__visual animate-on-scroll">
+                    <div class="solution__image">
+                        <div class="solution__image-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 4: QUÉ ES EL CURSO
+    ============================================ -->
+    <section class="course-details">
+        <div class="container">
+            <div class="course-details__intro animate-on-scroll">
+                <p class="section-eyebrow">El curso</p>
+                <h2 class="section-title">¿Qué es este curso de gimnasia cerebral?</h2>
+                <p>
+                    No es una terapia. No es un tratamiento médico. Es una <strong>guía práctica con videos cortos</strong> pensada para personas reales que quieren cuidar su mente de forma sencilla.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Videos de 1-2 minutos</h3>
+                    <p>Ejercicios muy cortos que puedes hacer en cualquier momento del día.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Sin evaluaciones</h3>
+                    <p>No hay exámenes ni forma de hacerlo "mal". Haces lo que puedes, cuando puedes.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3>A tu ritmo</h3>
+                    <p>Sentado o de pie, sin experiencia previa. Puedes pausar y repetir cuando quieras.</p>
+                </div>
+            </div>
+
+            <div class="course-details__how animate-on-scroll">
+                <h3>Cómo usar el curso</h3>
+                <div class="how-steps">
+                    <div class="how-step">
+                        <div class="how-step__number">1</div>
+                        <p>Entras desde tu computadora o teléfono</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step__number">2</div>
+                        <p>Reproduces los videos con un solo clic</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step__number">3</div>
+                        <p>Sigues los ejercicios con calma</p>
+                    </div>
+                    <div class="how-step">
+                        <div class="how-step__number">4</div>
+                        <p>Repites cuando quieras, sin presión</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 5: BENEFICIOS REALES
+    ============================================ -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">Lo que se siente</p>
+                <h2 class="section-title">Beneficios que notas en tu día a día</h2>
+            </div>
+
+            <div class="benefits-list">
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <span>Mente más despejada</span>
+                </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <span>Menos tensión corporal</span>
+                </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <span>Más atención en el día a día</span>
+                </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-item__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span>Mayor confianza al pensar</span>
+                </div>
+            </div>
+
+            <div class="benefits__quote animate-on-scroll">
+                <blockquote>
+                    El beneficio más poderoso no es cognitivo: es psicológico y corporal. Es sentirte más presente, más tranquilo, más tú.
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 6: FILTRO DE AUDIENCIA
+    ============================================ -->
+    <section class="audience">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">¿Es para ti?</p>
+                <h2 class="section-title">Este curso está pensado para personas que...</h2>
+            </div>
+
+            <div class="audience__grid">
+                <div class="audience__card audience__card--yes animate-on-scroll">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Es para ti si...
+                    </h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Valoras tu autonomía y quieres mantenerla
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Buscas algo práctico y sencillo
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Prefieres prevenir antes que preocuparte
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Te importa mantener tu claridad mental
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="audience__card audience__card--no animate-on-scroll">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        No es para ti si...
+                    </h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Buscas un tratamiento médico
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Esperas resultados mágicos o instantáneos
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Quieres algo intenso o competitivo
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Tienes limitación motora sin supervisión profesional
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 7: GARANTÍA Y SEGURIDAD
+    ============================================ -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee__card animate-on-scroll">
+                <div class="guarantee__badge">
+                    <span>7</span>
+                    <span>días</span>
+                </div>
+                <div class="guarantee__content">
+                    <h3>Garantía de tranquilidad total</h3>
+                    <p>
+                        Si en los primeros <strong>7 días</strong> sientes que el curso no es para ti, puedes solicitar tu reembolso completo. Sin preguntas. Sin problemas.
+                    </p>
+                    <p>
+                        El acceso es <strong>inmediato por correo electrónico</strong>. Entras con un solo clic, sin complicaciones técnicas. Y puedes ver los videos las veces que quieras.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 8: PREGUNTAS FRECUENTES
+    ============================================ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-eyebrow">Preguntas frecuentes</p>
+                <h2 class="section-title">Respuestas honestas a tus dudas</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿No soy muy grande para esto?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            No. Los ejercicios están pensados específicamente para adultos. No hay edad límite para empezar a cuidar tu mente. De hecho, este es el momento ideal.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "No soy bueno con la tecnología."
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            Los videos son simples y fáciles de usar. Entras con un clic desde el enlace que te llega al correo. Si puedes ver un video en internet, puedes usar este curso. No necesitas saber nada técnico.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿Y si no soy constante?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            No pasa nada. No hay exigencias. El curso no te presiona. Cada ejercicio cuenta, incluso cuando haces poco. Está ahí para cuando lo necesites.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿Cuánto tiempo necesito al día?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            Pocos minutos. Los ejercicios duran 1 a 2 minutos cada uno. Tú decides cuántos haces y cuándo. No hay un mínimo obligatorio.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-item__question">
+                        "¿Es un tratamiento médico?"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-item__answer">
+                        <div class="faq-item__answer-inner">
+                            No. Este curso no reemplaza atención médica. Es una herramienta de bienestar cotidiano, como caminar o estirarse, pero pensada para la mente.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN 9: CTA FINAL
+    ============================================ -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta__content animate-on-scroll">
+                <h2>Cuidar tu mente es una forma de seguir siendo tú.</h2>
+                
+                <div class="final-cta__values">
+                    <div class="final-cta__value">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Con claridad
+                    </div>
+                    <div class="final-cta__value">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Con confianza
+                    </div>
+                    <div class="final-cta__value">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Con calma
+                    </div>
+                </div>
+
+                <a href="#" class="cta-primary">
+                    Quiero empezar a cuidar mi mente
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+
+                <p class="final-cta__note">
+                    Acceso inmediato · Garantía de 7 días · Sin complicaciones
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Curso de Gimnasia Cerebral. Todos los derechos reservados.</p>
+            <p>
+                <a href="#">Términos y Condiciones</a> · 
+                <a href="#">Política de Privacidad</a> · 
+                <a href="#">Contacto</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item__question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+",
+      "description": "Crear landing page completa para el curso de Gimnasia Cerebral - diseño optimizado para Silver Economy"
+    },
+    "message": "Crear landing page completa para el curso de Gimnasia Cerebral - diseño optimizado para Silver Economy",
+    "integration_name": null,
+    "integration_icon_url": null,
+    "context": null,
+    "display_content": {
+      "type": "json_block",
+      "json_block": "{"language": "html", "code": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Gimnasia Cerebral | Cuida tu mente con ejercicios simples</title>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        :root {\n            /* Paleta c\u00e1lida y serena - inspirada en naturaleza y calma */\n            --color-cream: #FDF8F3;\n            --color-warm-white: #FFFBF7;\n            --color-sand: #E8DFD4;\n            --color-sage: #7A9E7E;\n            --color-sage-dark: #5C7A5F;\n            --color-sage-light: #A8C5AB;\n            --color-terracotta: #C67D4E;\n            --color-terracotta-dark: #A65F32;\n            --color-charcoal: #3D3D3D;\n            --color-warm-gray: #6B6560;\n            --color-light-gray: #B8B2AB;\n            \n            /* Tipograf\u00eda */\n            --font-display: 'Crimson Pro', Georgia, serif;\n            --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;\n            \n            /* Espaciado generoso para legibilidad */\n            --space-xs: 0.5rem;\n            --space-sm: 1rem;\n            --space-md: 1.5rem;\n            --space-lg: 2.5rem;\n            --space-xl: 4rem;\n            --space-2xl: 6rem;\n            \n            /* Radios suaves */\n            --radius-sm: 8px;\n            --radius-md: 12px;\n            --radius-lg: 20px;\n            --radius-xl: 32px;\n        }\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        html {\n            scroll-behavior: smooth;\n        }\n\n        body {\n            font-family: var(--font-body);\n            font-size: 19px;\n            line-height: 1.7;\n            color: var(--color-charcoal);\n            background-color: var(--color-cream);\n            -webkit-font-smoothing: antialiased;\n        }\n\n        /* Contenedor principal con m\u00e1ximo ancho para legibilidad */\n        .container {\n            max-width: 900px;\n            margin: 0 auto;\n            padding: 0 var(--space-md);\n        }\n\n        .container--wide {\n            max-width: 1100px;\n        }\n\n        /* ============================================\n           SECCI\u00d3N 1: HERO\n        ============================================ */\n        .hero {\n            background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-cream) 100%);\n            padding: var(--space-xl) 0 var(--space-2xl);\n            position: relative;\n            overflow: hidden;\n        }\n\n        .hero::before {\n            content: '';\n            position: absolute;\n            top: -50%;\n            right: -20%;\n            width: 600px;\n            height: 600px;\n            background: radial-gradient(circle, var(--color-sage-light) 0%, transparent 70%);\n            opacity: 0.15;\n            pointer-events: none;\n        }\n\n        .hero__badge {\n            display: inline-flex;\n            align-items: center;\n            gap: var(--space-xs);\n            background: var(--color-sage-light);\n            color: var(--color-sage-dark);\n            padding: 0.6rem 1.2rem;\n            border-radius: 50px;\n            font-size: 0.9rem;\n            font-weight: 600;\n            margin-bottom: var(--space-md);\n            animation: fadeInUp 0.8s ease-out;\n        }\n\n        .hero__badge svg {\n            width: 18px;\n            height: 18px;\n        }\n\n        .hero__title {\n            font-family: var(--font-display);\n            font-size: clamp(2.2rem, 5vw, 3.2rem);\n            font-weight: 500;\n            line-height: 1.25;\n            color: var(--color-charcoal);\n            margin-bottom: var(--space-md);\n            max-width: 800px;\n            animation: fadeInUp 0.8s ease-out 0.1s both;\n        }\n\n        .hero__title span {\n            color: var(--color-sage-dark);\n        }\n\n        .hero__subtitle {\n            font-size: 1.25rem;\n            color: var(--color-warm-gray);\n            max-width: 650px;\n            margin-bottom: var(--space-lg);\n            animation: fadeInUp 0.8s ease-out 0.2s both;\n        }\n\n        /* Video Container */\n        .hero__video-wrapper {\n            background: var(--color-charcoal);\n            border-radius: var(--radius-lg);\n            overflow: hidden;\n            box-shadow: \n                0 25px 50px -12px rgba(0, 0, 0, 0.15),\n                0 0 0 1px rgba(0, 0, 0, 0.05);\n            margin: var(--space-lg) 0;\n            animation: fadeInUp 0.8s ease-out 0.3s both;\n        }\n\n        .hero__video {\n            aspect-ratio: 16/9;\n            background: linear-gradient(135deg, var(--color-charcoal) 0%, #2a2a2a 100%);\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            position: relative;\n        }\n\n        .hero__video-placeholder {\n            text-align: center;\n            color: white;\n        }\n\n        .hero__play-btn {\n            width: 90px;\n            height: 90px;\n            background: var(--color-terracotta);\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            margin: 0 auto var(--space-md);\n            cursor: pointer;\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n            box-shadow: 0 10px 40px rgba(198, 125, 78, 0.4);\n        }\n\n        .hero__play-btn:hover {\n            transform: scale(1.08);\n            box-shadow: 0 15px 50px rgba(198, 125, 78, 0.5);\n        }\n\n        .hero__play-btn svg {\n            width: 36px;\n            height: 36px;\n            fill: white;\n            margin-left: 4px;\n        }\n\n        .hero__video-text {\n            font-size: 1.1rem;\n            opacity: 0.9;\n        }\n\n        /* CTA Principal */\n        .cta-primary {\n            display: inline-flex;\n            align-items: center;\n            justify-content: center;\n            gap: var(--space-sm);\n            background: var(--color-terracotta);\n            color: white;\n            font-family: var(--font-body);\n            font-size: 1.15rem;\n            font-weight: 600;\n            padding: 1.2rem 2.5rem;\n            border: none;\n            border-radius: var(--radius-xl);\n            cursor: pointer;\n            text-decoration: none;\n            transition: all 0.3s ease;\n            box-shadow: 0 8px 30px rgba(198, 125, 78, 0.35);\n            animation: fadeInUp 0.8s ease-out 0.4s both;\n        }\n\n        .cta-primary:hover {\n            background: var(--color-terracotta-dark);\n            transform: translateY(-2px);\n            box-shadow: 0 12px 40px rgba(198, 125, 78, 0.45);\n        }\n\n        .cta-primary svg {\n            width: 22px;\n            height: 22px;\n        }\n\n        .hero__guarantee {\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            gap: var(--space-xs);\n            margin-top: var(--space-md);\n            font-size: 0.95rem;\n            color: var(--color-warm-gray);\n            animation: fadeInUp 0.8s ease-out 0.5s both;\n        }\n\n        .hero__guarantee svg {\n            width: 18px;\n            height: 18px;\n            color: var(--color-sage);\n        }\n\n        /* ============================================\n           SECCI\u00d3N 2: IDENTIFICACI\u00d3N (El Problema)\n        ============================================ */\n        .identification {\n            background: white;\n            padding: var(--space-2xl) 0;\n            border-top: 1px solid var(--color-sand);\n            border-bottom: 1px solid var(--color-sand);\n        }\n\n        .section-header {\n            text-align: center;\n            margin-bottom: var(--space-xl);\n        }\n\n        .section-eyebrow {\n            font-size: 0.85rem;\n            font-weight: 600;\n            text-transform: uppercase;\n            letter-spacing: 2px;\n            color: var(--color-sage);\n            margin-bottom: var(--space-sm);\n        }\n\n        .section-title {\n            font-family: var(--font-display);\n            font-size: clamp(1.8rem, 4vw, 2.5rem);\n            font-weight: 500;\n            color: var(--color-charcoal);\n            line-height: 1.3;\n        }\n\n        .pain-points {\n            max-width: 700px;\n            margin: 0 auto;\n        }\n\n        .pain-point {\n            display: flex;\n            align-items: flex-start;\n            gap: var(--space-md);\n            padding: var(--space-md) 0;\n            border-bottom: 1px solid var(--color-sand);\n        }\n\n        .pain-point:last-child {\n            border-bottom: none;\n        }\n\n        .pain-point__icon {\n            flex-shrink: 0;\n            width: 48px;\n            height: 48px;\n            background: var(--color-cream);\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        .pain-point__icon svg {\n            width: 24px;\n            height: 24px;\n            color: var(--color-terracotta);\n        }\n\n        .pain-point__text {\n            font-size: 1.15rem;\n            color: var(--color-charcoal);\n            padding-top: 0.6rem;\n        }\n\n        .identification__close {\n            text-align: center;\n            margin-top: var(--space-xl);\n            padding: var(--space-lg);\n            background: var(--color-cream);\n            border-radius: var(--radius-lg);\n        }\n\n        .identification__close p {\n            font-size: 1.2rem;\n            color: var(--color-charcoal);\n        }\n\n        .identification__close p strong {\n            color: var(--color-sage-dark);\n        }\n\n        /* ============================================\n           SECCI\u00d3N 3: LA SOLUCI\u00d3N (Reencuadre)\n        ============================================ */\n        .solution {\n            background: var(--color-cream);\n            padding: var(--space-2xl) 0;\n        }\n\n        .solution__content {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: var(--space-xl);\n            align-items: center;\n        }\n\n        @media (max-width: 768px) {\n            .solution__content {\n                grid-template-columns: 1fr;\n            }\n        }\n\n        .solution__text h2 {\n            font-family: var(--font-display);\n            font-size: clamp(1.6rem, 3.5vw, 2.2rem);\n            font-weight: 500;\n            color: var(--color-charcoal);\n            margin-bottom: var(--space-md);\n            line-height: 1.35;\n        }\n\n        .solution__text p {\n            color: var(--color-warm-gray);\n            margin-bottom: var(--space-md);\n            font-size: 1.1rem;\n        }\n\n        .solution__highlight {\n            background: white;\n            border-left: 4px solid var(--color-sage);\n            padding: var(--space-md) var(--space-lg);\n            border-radius: 0 var(--radius-md) var(--radius-md) 0;\n            margin-top: var(--space-lg);\n        }\n\n        .solution__highlight p {\n            font-family: var(--font-display);\n            font-size: 1.3rem;\n            color: var(--color-charcoal);\n            font-style: italic;\n            margin: 0;\n        }\n\n        .solution__visual {\n            position: relative;\n        }\n\n        .solution__image {\n            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 100%);\n            border-radius: var(--radius-xl);\n            aspect-ratio: 4/3;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .solution__image::before {\n            content: '';\n            position: absolute;\n            inset: 0;\n            background: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");\n        }\n\n        .solution__image-icon {\n            width: 120px;\n            height: 120px;\n            background: white;\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);\n            z-index: 1;\n        }\n\n        .solution__image-icon svg {\n            width: 60px;\n            height: 60px;\n            color: var(--color-sage-dark);\n        }\n\n        /* ============================================\n           SECCI\u00d3N 4: QU\u00c9 ES EL CURSO\n        ============================================ */\n        .course-details {\n            background: white;\n            padding: var(--space-2xl) 0;\n            border-top: 1px solid var(--color-sand);\n        }\n\n        .course-details__intro {\n            text-align: center;\n            max-width: 700px;\n            margin: 0 auto var(--space-xl);\n        }\n\n        .course-details__intro p {\n            font-size: 1.15rem;\n            color: var(--color-warm-gray);\n            margin-top: var(--space-md);\n        }\n\n        .features-grid {\n            display: grid;\n            grid-template-columns: repeat(3, 1fr);\n            gap: var(--space-lg);\n        }\n\n        @media (max-width: 768px) {\n            .features-grid {\n                grid-template-columns: 1fr;\n            }\n        }\n\n        .feature-card {\n            text-align: center;\n            padding: var(--space-lg);\n            background: var(--color-cream);\n            border-radius: var(--radius-lg);\n            transition: transform 0.3s ease, box-shadow 0.3s ease;\n        }\n\n        .feature-card:hover {\n            transform: translateY(-4px);\n            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);\n        }\n\n        .feature-card__icon {\n            width: 70px;\n            height: 70px;\n            background: white;\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            margin: 0 auto var(--space-md);\n            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);\n        }\n\n        .feature-card__icon svg {\n            width: 32px;\n            height: 32px;\n            color: var(--color-sage-dark);\n        }\n\n        .feature-card h3 {\n            font-family: var(--font-display);\n            font-size: 1.3rem;\n            font-weight: 500;\n            color: var(--color-charcoal);\n            margin-bottom: var(--space-xs);\n        }\n\n        .feature-card p {\n            font-size: 1rem;\n            color: var(--color-warm-gray);\n        }\n\n        .course-details__how {\n            margin-top: var(--space-xl);\n            background: var(--color-cream);\n            border-radius: var(--radius-lg);\n            padding: var(--space-lg);\n        }\n\n        .course-details__how h3 {\n            font-family: var(--font-display);\n            font-size: 1.4rem;\n            font-weight: 500;\n            color: var(--color-charcoal);\n            margin-bottom: var(--space-md);\n            text-align: center;\n        }\n\n        .how-steps {\n            display: grid;\n            grid-template-columns: repeat(4, 1fr);\n            gap: var(--space-md);\n        }\n\n        @media (max-width: 768px) {\n            .how-steps {\n                grid-template-columns: repeat(2, 1fr);\n            }\n        }\n\n        .how-step {\n            text-align: center;\n            padding: var(--space-md);\n        }\n\n        .how-step__number {\n            width: 40px;\n            height: 40px;\n            background: var(--color-sage);\n            color: white;\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            margin: 0 auto var(--space-sm);\n            font-weight: 600;\n            font-size: 1.1rem;\n        }\n\n        .how-step p {\n            font-size: 0.95rem;\n            color: var(--color-warm-gray);\n        }\n\n        /* ============================================\n           SECCI\u00d3N 5: BENEFICIOS REALES\n        ============================================ */\n        .benefits {\n            background: linear-gradient(180deg, var(--color-sage-dark) 0%, var(--color-sage) 100%);\n            padding: var(--space-2xl) 0;\n            color: white;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .benefits::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            background: url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E\");\n            pointer-events: none;\n        }\n\n        .benefits .section-eyebrow {\n            color: rgba(255, 255, 255, 0.7);\n        }\n\n        .benefits .section-title {\n            color: white;\n        }\n\n        .benefits-list {\n            display: grid;\n            grid-template-columns: repeat(2, 1fr);\n            gap: var(--space-md);\n            max-width: 800px;\n            margin: 0 auto;\n        }\n\n        @media (max-width: 600px) {\n            .benefits-list {\n                grid-template-columns: 1fr;\n            }\n        }\n\n        .benefit-item {\n            display: flex;\n            align-items: center;\n            gap: var(--space-md);\n            background: rgba(255, 255, 255, 0.1);\n            padding: var(--space-md) var(--space-lg);\n            border-radius: var(--radius-md);\n            backdrop-filter: blur(10px);\n        }\n\n        .benefit-item__icon {\n            flex-shrink: 0;\n            width: 50px;\n            height: 50px;\n            background: white;\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n\n        .benefit-item__icon svg {\n            width: 24px;\n            height: 24px;\n            color: var(--color-sage-dark);\n        }\n\n        .benefit-item span {\n            font-size: 1.1rem;\n        }\n\n        .benefits__quote {\n            margin-top: var(--space-xl);\n            text-align: center;\n            max-width: 700px;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .benefits__quote blockquote {\n            font-family: var(--font-display);\n            font-size: 1.5rem;\n            font-style: italic;\n            opacity: 0.95;\n            position: relative;\n            padding: 0 var(--space-lg);\n        }\n\n        .benefits__quote blockquote::before {\n            content: '\"';\n            font-size: 4rem;\n            position: absolute;\n            left: -10px;\n            top: -20px;\n            opacity: 0.3;\n            font-family: Georgia, serif;\n        }\n\n        /* ============================================\n           SECCI\u00d3N 6: FILTRO DE AUDIENCIA\n        ============================================ */\n        .audience {\n            background: var(--color-cream);\n            padding: var(--space-2xl) 0;\n        }\n\n        .audience__grid {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: var(--space-lg);\n        }\n\n        @media (max-width: 768px) {\n            .audience__grid {\n                grid-template-columns: 1fr;\n            }\n        }\n\n        .audience__card {\n            background: white;\n            border-radius: var(--radius-lg);\n            padding: var(--space-lg);\n            border: 2px solid transparent;\n        }\n\n        .audience__card--yes {\n            border-color: var(--color-sage-light);\n        }\n\n        .audience__card--no {\n            border-color: var(--color-sand);\n        }\n\n        .audience__card h3 {\n            font-family: var(--font-display);\n            font-size: 1.4rem;\n            font-weight: 500;\n            margin-bottom: var(--space-md);\n            display: flex;\n            align-items: center;\n            gap: var(--space-sm);\n        }\n\n        .audience__card--yes h3 {\n            color: var(--color-sage-dark);\n        }\n\n        .audience__card--no h3 {\n            color: var(--color-warm-gray);\n        }\n\n        .audience__card h3 svg {\n            width: 28px;\n            height: 28px;\n        }\n\n        .audience__card ul {\n            list-style: none;\n        }\n\n        .audience__card li {\n            padding: var(--space-sm) 0;\n            border-bottom: 1px solid var(--color-sand);\n            display: flex;\n            align-items: flex-start;\n            gap: var(--space-sm);\n            font-size: 1.05rem;\n        }\n\n        .audience__card li:last-child {\n            border-bottom: none;\n        }\n\n        .audience__card li svg {\n            flex-shrink: 0;\n            width: 22px;\n            height: 22px;\n            margin-top: 3px;\n        }\n\n        .audience__card--yes li svg {\n            color: var(--color-sage);\n        }\n\n        .audience__card--no li svg {\n            color: var(--color-light-gray);\n        }\n\n        /* ============================================\n           SECCI\u00d3N 7: GARANT\u00cdA Y SEGURIDAD\n        ============================================ */\n        .guarantee {\n            background: white;\n            padding: var(--space-2xl) 0;\n            border-top: 1px solid var(--color-sand);\n        }\n\n        .guarantee__card {\n            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-white) 100%);\n            border-radius: var(--radius-xl);\n            padding: var(--space-xl);\n            display: grid;\n            grid-template-columns: auto 1fr;\n            gap: var(--space-lg);\n            align-items: center;\n            max-width: 800px;\n            margin: 0 auto;\n            border: 2px solid var(--color-sage-light);\n        }\n\n        @media (max-width: 600px) {\n            .guarantee__card {\n                grid-template-columns: 1fr;\n                text-align: center;\n            }\n        }\n\n        .guarantee__badge {\n            width: 120px;\n            height: 120px;\n            background: var(--color-sage);\n            border-radius: 50%;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            justify-content: center;\n            color: white;\n            box-shadow: 0 10px 30px rgba(122, 158, 126, 0.3);\n        }\n\n        .guarantee__badge span:first-child {\n            font-size: 2.5rem;\n            font-weight: 700;\n            line-height: 1;\n        }\n\n        .guarantee__badge span:last-child {\n            font-size: 0.9rem;\n            text-transform: uppercase;\n            letter-spacing: 1px;\n        }\n\n        .guarantee__content h3 {\n            font-family: var(--font-display);\n            font-size: 1.6rem;\n            font-weight: 500;\n            color: var(--color-charcoal);\n            margin-bottom: var(--space-sm);\n        }\n\n        .guarantee__content p {\n            color: var(--color-warm-gray);\n            font-size: 1.1rem;\n            margin-bottom: var(--space-sm);\n        }\n\n        .guarantee__content strong {\n            color: var(--color-sage-dark);\n        }\n\n        /* ============================================\n           SECCI\u00d3N 8: PREGUNTAS FRECUENTES\n        ============================================ */\n        .faq {\n            background: var(--color-cream);\n            padding: var(--space-2xl) 0;\n        }\n\n        .faq-list {\n            max-width: 750px;\n            margin: 0 auto;\n        }\n\n        .faq-item {\n            background: white;\n            border-radius: var(--radius-md);\n            margin-bottom: var(--space-md);\n            overflow: hidden;\n            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);\n        }\n\n        .faq-item__question {\n            width: 100%;\n            background: none;\n            border: none;\n            padding: var(--space-md) var(--space-lg);\n            text-align: left;\n            cursor: pointer;\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            gap: var(--space-md);\n            font-family: var(--font-body);\n            font-size: 1.15rem;\n            font-weight: 600;\n            color: var(--color-charcoal);\n            transition: background 0.2s ease;\n        }\n\n        .faq-item__question:hover {\n            background: var(--color-cream);\n        }\n\n        .faq-item__question svg {\n            flex-shrink: 0;\n            width: 24px;\n            height: 24px;\n            color: var(--color-sage);\n            transition: transform 0.3s ease;\n        }\n\n        .faq-item.active .faq-item__question svg {\n            transform: rotate(180deg);\n        }\n\n        .faq-item__answer {\n            max-height: 0;\n            overflow: hidden;\n            transition: max-height 0.3s ease;\n        }\n\n        .faq-item.active .faq-item__answer {\n            max-height: 300px;\n        }\n\n        .faq-item__answer-inner {\n            padding: 0 var(--space-lg) var(--space-lg);\n            color: var(--color-warm-gray);\n            font-size: 1.05rem;\n        }\n\n        /* ============================================\n           SECCI\u00d3N 9: CTA FINAL\n        ============================================ */\n        .final-cta {\n            background: linear-gradient(180deg, white 0%, var(--color-cream) 100%);\n            padding: var(--space-2xl) 0;\n            text-align: center;\n            border-top: 1px solid var(--color-sand);\n        }\n\n        .final-cta__content {\n            max-width: 650px;\n            margin: 0 auto;\n        }\n\n        .final-cta h2 {\n            font-family: var(--font-display);\n            font-size: clamp(1.8rem, 4vw, 2.4rem);\n            font-weight: 500;\n            color: var(--color-charcoal);\n            line-height: 1.35;\n            margin-bottom: var(--space-md);\n        }\n\n        .final-cta__values {\n            display: flex;\n            justify-content: center;\n            gap: var(--space-lg);\n            margin-bottom: var(--space-lg);\n            flex-wrap: wrap;\n        }\n\n        .final-cta__value {\n            display: flex;\n            align-items: center;\n            gap: var(--space-xs);\n            font-size: 1.1rem;\n            color: var(--color-sage-dark);\n            font-weight: 500;\n        }\n\n        .final-cta__value svg {\n            width: 20px;\n            height: 20px;\n        }\n\n        .final-cta .cta-primary {\n            font-size: 1.25rem;\n            padding: 1.4rem 3rem;\n        }\n\n        .final-cta__note {\n            margin-top: var(--space-md);\n            font-size: 0.95rem;\n            color: var(--color-warm-gray);\n        }\n\n        /* ============================================\n           FOOTER\n        ============================================ */\n        .footer {\n            background: var(--color-charcoal);\n            color: rgba(255, 255, 255, 0.7);\n            padding: var(--space-lg) 0;\n            text-align: center;\n            font-size: 0.9rem;\n        }\n\n        .footer p {\n            margin-bottom: var(--space-xs);\n        }\n\n        .footer a {\n            color: rgba(255, 255, 255, 0.9);\n            text-decoration: none;\n        }\n\n        .footer a:hover {\n            text-decoration: underline;\n        }\n\n        /* ============================================\n           ANIMACIONES\n        ============================================ */\n        @keyframes fadeInUp {\n            from {\n                opacity: 0;\n                transform: translateY(20px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n\n        /* Scroll animations */\n        .animate-on-scroll {\n            opacity: 0;\n            transform: translateY(30px);\n            transition: opacity 0.6s ease, transform 0.6s ease;\n        }\n\n        .animate-on-scroll.visible {\n            opacity: 1;\n            transform: translateY(0);\n        }\n\n        /* ============================================\n           RESPONSIVE REFINEMENTS\n        ============================================ */\n        @media (max-width: 480px) {\n            body {\n                font-size: 17px;\n            }\n            \n            .container {\n                padding: 0 var(--space-sm);\n            }\n            \n            .hero {\n                padding: var(--space-lg) 0 var(--space-xl);\n            }\n            \n            .cta-primary {\n                width: 100%;\n                justify-content: center;\n            }\n        }\n    </style>\n</head>\n<body>\n\n    <!-- ============================================\n         SECCI\u00d3N 1: HERO\n    ============================================ -->\n    <section class=\"hero\">\n        <div class=\"container\">\n            <div class=\"hero__badge\">\n                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                    <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\" />\n                </svg>\n                Curso online \u00b7 Acceso inmediato \u00b7 Videos cortos y claros\n            </div>\n            \n            <h1 class=\"hero__title\">\n                Cuida tu mente con ejercicios simples de <span>gimnasia cerebral</span>. Mant\u00e9n tu claridad, a tu ritmo.\n            </h1>\n            \n            <p class=\"hero__subtitle\">\n                Un curso online sencillo para personas mayores de 50 que quieren sentirse m\u00e1s despiertas, seguras y tranquilas. Sin horarios, sin presiones.\n            </p>\n\n            <div class=\"hero__video-wrapper\">\n                <div class=\"hero__video\">\n                    <div class=\"hero__video-placeholder\">\n                        <div class=\"hero__play-btn\">\n                            <svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n                                <path d=\"M8 5v14l11-7z\"/>\n                            </svg>\n                        </div>\n                        <p class=\"hero__video-text\">Ver video explicativo (6 min)</p>\n                    </div>\n                </div>\n            </div>\n\n            <div style=\"text-align: center;\">\n                <a href=\"#\" class=\"cta-primary\">\n                    Acceder al curso ahora\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                        <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 7l5 5m0 0l-5 5m5-5H6\" />\n                    </svg>\n                </a>\n                \n                <p class=\"hero__guarantee\">\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                        <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\" />\n                    </svg>\n                    Garant\u00eda de 7 d\u00edas \u00b7 Devoluci\u00f3n sin preguntas\n                </p>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 2: IDENTIFICACI\u00d3N (El Problema)\n    ============================================ -->\n    <section class=\"identification\">\n        <div class=\"container\">\n            <div class=\"section-header animate-on-scroll\">\n                <p class=\"section-eyebrow\">Recon\u00f3cete aqu\u00ed</p>\n                <h2 class=\"section-title\">\u00bfEsto te pasa a ti?</h2>\n            </div>\n\n            <div class=\"pain-points\">\n                <div class=\"pain-point animate-on-scroll\">\n                    <div class=\"pain-point__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\" />\n                        </svg>\n                    </div>\n                    <p class=\"pain-point__text\">Entras a una habitaci\u00f3n y olvidas a qu\u00e9 ibas.</p>\n                </div>\n\n                <div class=\"pain-point animate-on-scroll\">\n                    <div class=\"pain-point__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z\" />\n                        </svg>\n                    </div>\n                    <p class=\"pain-point__text\">Buscas una palabra conocida y no te sale en el momento.</p>\n                </div>\n\n                <div class=\"pain-point animate-on-scroll\">\n                    <div class=\"pain-point__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 10V3L4 14h7v7l9-11h-7z\" />\n                        </svg>\n                    </div>\n                    <p class=\"pain-point__text\">Te distraes con facilidad o te sientes mentalmente cansado algunos d\u00edas.</p>\n                </div>\n\n                <div class=\"pain-point animate-on-scroll\">\n                    <div class=\"pain-point__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2\" />\n                        </svg>\n                    </div>\n                    <p class=\"pain-point__text\">Notas tensi\u00f3n en el cuello o los hombros cuando est\u00e1s preocupado.</p>\n                </div>\n\n                <div class=\"pain-point animate-on-scroll\">\n                    <div class=\"pain-point__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\" />\n                        </svg>\n                    </div>\n                    <p class=\"pain-point__text\">Tienes que releer para entender o pierdes el hilo en conversaciones.</p>\n                </div>\n            </div>\n\n            <div class=\"identification__close animate-on-scroll\">\n                <p>No es grave. Pero cuando se repite, incomoda.<br><strong>La buena noticia es que puedes hacer algo hoy.</strong></p>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 3: LA SOLUCI\u00d3N (Reencuadre)\n    ============================================ -->\n    <section class=\"solution\">\n        <div class=\"container container--wide\">\n            <div class=\"solution__content\">\n                <div class=\"solution__text animate-on-scroll\">\n                    <h2>La mente tambi\u00e9n se puede entrenar. O mejor dicho, acompa\u00f1ar y cuidar.</h2>\n                    <p>\n                        As\u00ed como el cuerpo agradece moverse un poco cada d\u00eda, la mente tambi\u00e9n responde cuando la activamos de forma adecuada.\n                    </p>\n                    <p>\n                        No con esfuerzos extremos. No con ejercicios complicados. No con teor\u00edas dif\u00edciles de entender.\n                    </p>\n                    <p>\n                        Sino con <strong>movimientos suaves y conscientes</strong> que ayudan a despejar la cabeza, a estar m\u00e1s presente y a sentir m\u00e1s confianza al pensar.\n                    </p>\n                    \n                    <div class=\"solution__highlight\">\n                        <p>\"No se trata de cambiar qui\u00e9n eres. Se trata de cuidar lo que ya tienes.\"</p>\n                    </div>\n                </div>\n                \n                <div class=\"solution__visual animate-on-scroll\">\n                    <div class=\"solution__image\">\n                        <div class=\"solution__image-icon\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"1.5\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z\" />\n                            </svg>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 4: QU\u00c9 ES EL CURSO\n    ============================================ -->\n    <section class=\"course-details\">\n        <div class=\"container\">\n            <div class=\"course-details__intro animate-on-scroll\">\n                <p class=\"section-eyebrow\">El curso</p>\n                <h2 class=\"section-title\">\u00bfQu\u00e9 es este curso de gimnasia cerebral?</h2>\n                <p>\n                    No es una terapia. No es un tratamiento m\u00e9dico. Es una <strong>gu\u00eda pr\u00e1ctica con videos cortos</strong> pensada para personas reales que quieren cuidar su mente de forma sencilla.\n                </p>\n            </div>\n\n            <div class=\"features-grid\">\n                <div class=\"feature-card animate-on-scroll\">\n                    <div class=\"feature-card__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\" />\n                        </svg>\n                    </div>\n                    <h3>Videos de 1-2 minutos</h3>\n                    <p>Ejercicios muy cortos que puedes hacer en cualquier momento del d\u00eda.</p>\n                </div>\n\n                <div class=\"feature-card animate-on-scroll\">\n                    <div class=\"feature-card__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\" />\n                        </svg>\n                    </div>\n                    <h3>Sin evaluaciones</h3>\n                    <p>No hay ex\u00e1menes ni forma de hacerlo \"mal\". Haces lo que puedes, cuando puedes.</p>\n                </div>\n\n                <div class=\"feature-card animate-on-scroll\">\n                    <div class=\"feature-card__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\" />\n                        </svg>\n                    </div>\n                    <h3>A tu ritmo</h3>\n                    <p>Sentado o de pie, sin experiencia previa. Puedes pausar y repetir cuando quieras.</p>\n                </div>\n            </div>\n\n            <div class=\"course-details__how animate-on-scroll\">\n                <h3>C\u00f3mo usar el curso</h3>\n                <div class=\"how-steps\">\n                    <div class=\"how-step\">\n                        <div class=\"how-step__number\">1</div>\n                        <p>Entras desde tu computadora o tel\u00e9fono</p>\n                    </div>\n                    <div class=\"how-step\">\n                        <div class=\"how-step__number\">2</div>\n                        <p>Reproduces los videos con un solo clic</p>\n                    </div>\n                    <div class=\"how-step\">\n                        <div class=\"how-step__number\">3</div>\n                        <p>Sigues los ejercicios con calma</p>\n                    </div>\n                    <div class=\"how-step\">\n                        <div class=\"how-step__number\">4</div>\n                        <p>Repites cuando quieras, sin presi\u00f3n</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 5: BENEFICIOS REALES\n    ============================================ -->\n    <section class=\"benefits\">\n        <div class=\"container\">\n            <div class=\"section-header animate-on-scroll\">\n                <p class=\"section-eyebrow\">Lo que se siente</p>\n                <h2 class=\"section-title\">Beneficios que notas en tu d\u00eda a d\u00eda</h2>\n            </div>\n\n            <div class=\"benefits-list\">\n                <div class=\"benefit-item animate-on-scroll\">\n                    <div class=\"benefit-item__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z\" />\n                        </svg>\n                    </div>\n                    <span>Mente m\u00e1s despejada</span>\n                </div>\n                \n                <div class=\"benefit-item animate-on-scroll\">\n                    <div class=\"benefit-item__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\" />\n                        </svg>\n                    </div>\n                    <span>Menos tensi\u00f3n corporal</span>\n                </div>\n                \n                <div class=\"benefit-item animate-on-scroll\">\n                    <div class=\"benefit-item__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M15 12a3 3 0 11-6 0 3 3 0 016 0z\" />\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z\" />\n                        </svg>\n                    </div>\n                    <span>M\u00e1s atenci\u00f3n en el d\u00eda a d\u00eda</span>\n                </div>\n                \n                <div class=\"benefit-item animate-on-scroll\">\n                    <div class=\"benefit-item__icon\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\" />\n                        </svg>\n                    </div>\n                    <span>Mayor confianza al pensar</span>\n                </div>\n            </div>\n\n            <div class=\"benefits__quote animate-on-scroll\">\n                <blockquote>\n                    El beneficio m\u00e1s poderoso no es cognitivo: es psicol\u00f3gico y corporal. Es sentirte m\u00e1s presente, m\u00e1s tranquilo, m\u00e1s t\u00fa.\n                </blockquote>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 6: FILTRO DE AUDIENCIA\n    ============================================ -->\n    <section class=\"audience\">\n        <div class=\"container\">\n            <div class=\"section-header animate-on-scroll\">\n                <p class=\"section-eyebrow\">\u00bfEs para ti?</p>\n                <h2 class=\"section-title\">Este curso est\u00e1 pensado para personas que...</h2>\n            </div>\n\n            <div class=\"audience__grid\">\n                <div class=\"audience__card audience__card--yes animate-on-scroll\">\n                    <h3>\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\" />\n                        </svg>\n                        Es para ti si...\n                    </h3>\n                    <ul>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n                            </svg>\n                            Valoras tu autonom\u00eda y quieres mantenerla\n                        </li>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n                            </svg>\n                            Buscas algo pr\u00e1ctico y sencillo\n                        </li>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n                            </svg>\n                            Prefieres prevenir antes que preocuparte\n                        </li>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n                            </svg>\n                            Te importa mantener tu claridad mental\n                        </li>\n                    </ul>\n                </div>\n\n                <div class=\"audience__card audience__card--no animate-on-scroll\">\n                    <h3>\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z\" />\n                        </svg>\n                        No es para ti si...\n                    </h3>\n                    <ul>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n                            </svg>\n                            Buscas un tratamiento m\u00e9dico\n                        </li>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n                            </svg>\n                            Esperas resultados m\u00e1gicos o instant\u00e1neos\n                        </li>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n                            </svg>\n                            Quieres algo intenso o competitivo\n                        </li>\n                        <li>\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n                            </svg>\n                            Tienes limitaci\u00f3n motora sin supervisi\u00f3n profesional\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 7: GARANT\u00cdA Y SEGURIDAD\n    ============================================ -->\n    <section class=\"guarantee\">\n        <div class=\"container\">\n            <div class=\"guarantee__card animate-on-scroll\">\n                <div class=\"guarantee__badge\">\n                    <span>7</span>\n                    <span>d\u00edas</span>\n                </div>\n                <div class=\"guarantee__content\">\n                    <h3>Garant\u00eda de tranquilidad total</h3>\n                    <p>\n                        Si en los primeros <strong>7 d\u00edas</strong> sientes que el curso no es para ti, puedes solicitar tu reembolso completo. Sin preguntas. Sin problemas.\n                    </p>\n                    <p>\n                        El acceso es <strong>inmediato por correo electr\u00f3nico</strong>. Entras con un solo clic, sin complicaciones t\u00e9cnicas. Y puedes ver los videos las veces que quieras.\n                    </p>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 8: PREGUNTAS FRECUENTES\n    ============================================ -->\n    <section class=\"faq\">\n        <div class=\"container\">\n            <div class=\"section-header animate-on-scroll\">\n                <p class=\"section-eyebrow\">Preguntas frecuentes</p>\n                <h2 class=\"section-title\">Respuestas honestas a tus dudas</h2>\n            </div>\n\n            <div class=\"faq-list\">\n                <div class=\"faq-item animate-on-scroll\">\n                    <button class=\"faq-item__question\">\n                        \"\u00bfNo soy muy grande para esto?\"\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19 9l-7 7-7-7\" />\n                        </svg>\n                    </button>\n                    <div class=\"faq-item__answer\">\n                        <div class=\"faq-item__answer-inner\">\n                            No. Los ejercicios est\u00e1n pensados espec\u00edficamente para adultos. No hay edad l\u00edmite para empezar a cuidar tu mente. De hecho, este es el momento ideal.\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"faq-item animate-on-scroll\">\n                    <button class=\"faq-item__question\">\n                        \"No soy bueno con la tecnolog\u00eda.\"\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19 9l-7 7-7-7\" />\n                        </svg>\n                    </button>\n                    <div class=\"faq-item__answer\">\n                        <div class=\"faq-item__answer-inner\">\n                            Los videos son simples y f\u00e1ciles de usar. Entras con un clic desde el enlace que te llega al correo. Si puedes ver un video en internet, puedes usar este curso. No necesitas saber nada t\u00e9cnico.\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"faq-item animate-on-scroll\">\n                    <button class=\"faq-item__question\">\n                        \"\u00bfY si no soy constante?\"\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19 9l-7 7-7-7\" />\n                        </svg>\n                    </button>\n                    <div class=\"faq-item__answer\">\n                        <div class=\"faq-item__answer-inner\">\n                            No pasa nada. No hay exigencias. El curso no te presiona. Cada ejercicio cuenta, incluso cuando haces poco. Est\u00e1 ah\u00ed para cuando lo necesites.\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"faq-item animate-on-scroll\">\n                    <button class=\"faq-item__question\">\n                        \"\u00bfCu\u00e1nto tiempo necesito al d\u00eda?\"\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19 9l-7 7-7-7\" />\n                        </svg>\n                    </button>\n                    <div class=\"faq-item__answer\">\n                        <div class=\"faq-item__answer-inner\">\n                            Pocos minutos. Los ejercicios duran 1 a 2 minutos cada uno. T\u00fa decides cu\u00e1ntos haces y cu\u00e1ndo. No hay un m\u00ednimo obligatorio.\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"faq-item animate-on-scroll\">\n                    <button class=\"faq-item__question\">\n                        \"\u00bfEs un tratamiento m\u00e9dico?\"\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19 9l-7 7-7-7\" />\n                        </svg>\n                    </button>\n                    <div class=\"faq-item__answer\">\n                        <div class=\"faq-item__answer-inner\">\n                            No. Este curso no reemplaza atenci\u00f3n m\u00e9dica. Es una herramienta de bienestar cotidiano, como caminar o estirarse, pero pensada para la mente.\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         SECCI\u00d3N 9: CTA FINAL\n    ============================================ -->\n    <section class=\"final-cta\">\n        <div class=\"container\">\n            <div class=\"final-cta__content animate-on-scroll\">\n                <h2>Cuidar tu mente es una forma de seguir siendo t\u00fa.</h2>\n                \n                <div class=\"final-cta__values\">\n                    <div class=\"final-cta__value\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n                        </svg>\n                        Con claridad\n                    </div>\n                    <div class=\"final-cta__value\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n                        </svg>\n                        Con confianza\n                    </div>\n                    <div class=\"final-cta__value\">\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n                        </svg>\n                        Con calma\n                    </div>\n                </div>\n\n                <a href=\"#\" class=\"cta-primary\">\n                    Quiero empezar a cuidar mi mente\n                    <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\">\n                        <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 7l5 5m0 0l-5 5m5-5H6\" />\n                    </svg>\n                </a>\n\n                <p class=\"final-cta__note\">\n                    Acceso inmediato \u00b7 Garant\u00eda de 7 d\u00edas \u00b7 Sin complicaciones\n                </p>\n            </div>\n        </div>\n    </section>\n\n    <!-- ============================================\n         FOOTER\n    ============================================ -->\n    <footer class=\"footer\">\n        <div class=\"container\">\n            <p>\u00a9 2025 Curso de Gimnasia Cerebral. Todos los derechos reservados.</p>\n            <p>\n                <a href=\"#\">T\u00e9rminos y Condiciones</a> \u00b7 \n                <a href=\"#\">Pol\u00edtica de Privacidad</a> \u00b7 \n                <a href=\"#\">Contacto</a>\n            </p>\n        </div>\n    </footer>\n\n    <script>\n        // FAQ Accordion\n        document.querySelectorAll('.faq-item__question').forEach(button => {\n            button.addEventListener('click', () => {\n                const faqItem = button.parentElement;\n                const isActive = faqItem.classList.contains('active');\n                \n                // Close all FAQ items\n                document.querySelectorAll('.faq-item').forEach(item => {\n                    item.classList.remove('active');\n                });\n                \n                // Open clicked item if it wasn't active\n                if (!isActive) {\n                    faqItem.classList.add('active');\n                }\n            });\n        });\n\n        // Scroll animations\n        const observerOptions = {\n            threshold: 0.1,\n            rootMargin: '0px 0px -50px 0px'\n        };\n\n        const observer = new IntersectionObserver((entries) => {\n            entries.forEach(entry => {\n                if (entry.isIntersecting) {\n                    entry.target.classList.add('visible');\n                }\n            });\n        }, observerOptions);\n\n        document.querySelectorAll('.animate-on-scroll').forEach(el => {\n            observer.observe(el);\n        });\n\n        // Smooth scroll for anchor links\n        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {\n            anchor.addEventListener('click', function (e) {\n                e.preventDefault();\n                const target = document.querySelector(this.getAttribute('href'));\n                if (target) {\n                    target.scrollIntoView({\n                        behavior: 'smooth',\n                        block: 'start'\n                    });\n                }\n            });\n        });\n    </script>\n\n</body>\n</html>\n", "filename": "/home/claude/gimnasia-cerebral-landing.html"}"
+    },
+    "approval_options": null,
+    "approval_key": null
+  },
+  {
+    "start_timestamp": null,
+    "stop_timestamp": null,
+    "flags": null,
+    "type": "tool_result",
+    "tool_use_id": "toolu_01Szbrzj61k51wHdeHdAYb2s",
+    "name": "create_file",
+    "content": [
+      {
+        "type": "text",
+        "text": "File created successfully: /home/claude/gimnasia-cerebral-landing.html",
+        "uuid": "34164ab0-3583-44b7-ad3c-6e0ade811d63"
+      }
+    ],
+    "is_error": false,
+    "structured_content": null,
+    "meta": null,
+    "message": null,
+    "integration_name": null,
+    "integration_icon_url": null,
+    "display_content": {
+      "type": "text",
+      "text": "File created successfully: /home/claude/gimnasia-cerebral-landing.html"
+    }
+  },
+  {
+    "start_timestamp": "2026-01-16T15:17:22.879728Z",
+    "stop_timestamp": "2026-01-16T15:17:23.915296Z",
+    "flags": null,
+    "type": "tool_use",
+    "id": "toolu_01T9DmdqZ3DZxBDx318Nu26i",
+    "name": "bash_tool",
+    "input": {
+      "command": "cp /home/claude/gimnasia-cerebral-landing.html /mnt/user-data/outputs/gimnasia-cerebral-landing.html",
+      "description": "Copiar la landing page al directorio de outputs para que el usuario pueda acceder"
+    },
+    "message": "Copiar la landing page al directorio de outputs para que el usuario pueda acceder",
+    "integration_name": null,
+    "integration_icon_url": null,
+    "context": null,
+    "display_content": {
+      "type": "json_block",
+      "json_block": "{"language": "bash", "code": "cp /home/claude/gimnasia-cerebral-landing.html /mnt/user-data/outputs/gimnasia-cerebral-landing.html"}"
+    },
+    "approval_options": null,
+    "approval_key": null
+  },
+  {
+    "start_timestamp": null,
+    "stop_timestamp": null,
+    "flags": null,
+    "type": "tool_result",
+    "tool_use_id": "toolu_01T9DmdqZ3DZxBDx318Nu26i",
+    "name": "bash_tool",
+    "content": [
+      {
+        "type": "text",
+        "text": "{"returncode":0,"stdout":"","stderr":""}",
+        "uuid": "3be0728d-099b-4290-a1cf-4a2b6ba0f92e"
+      }
+    ],
+    "is_error": false,
+    "structured_content": null,
+    "meta": null,
+    "message": null,
+    "integration_name": null,
+    "integration_icon_url": null,
+    "display_content": {
+      "type": "json_block",
+      "json_block": "{"returncode":0,"stdout":"","stderr":""}"
+    }
+  },
+  {
+    "start_timestamp": "2026-01-16T15:17:27.611788Z",
+    "stop_timestamp": "2026-01-16T15:17:27.925616Z",
+    "flags": null,
+    "type": "tool_use",
+    "id": "toolu_01VK2T4ieR2rJpGpwExtiP1u",
+    "name": "present_files",
+    "input": {
+      "filepaths": [
+        "/mnt/user-data/outputs/gimnasia-cerebral-landing.html"
+      ]
+    },
+    "message": "Presenting file(s)...",
+    "integration_name": null,
+    "integration_icon_url": null,
+    "context": null,
+    "display_content": {
+      "type": "table",
+      "table": [
+        [
+          "filepaths",
+          "['/mnt/user-data/outputs/gimnasia-cerebral-landing.html']"
+        ]
+      ]
+    },
+    "approval_options": null,
+    "approval_key": null
+  },
+  {
+    "start_timestamp": null,
+    "stop_timestamp": null,
+    "flags": null,
+    "type": "tool_result",
+    "tool_use_id": "toolu_01VK2T4ieR2rJpGpwExtiP1u",
+    "name": "present_files",
+    "content": [
+      {
+        "type": "local_resource",
+        "file_path": "/mnt/user-data/outputs/gimnasia-cerebral-landing.html",
+        "name": "gimnasia-cerebral-landing",
+        "mime_type": "text/html",
+        "uuid": "b78789ed-5755-4988-bfe9-421a6f6f8e9b"
+      }
+    ],
+    "is_error": false,
+    "structured_content": null,
+    "meta": null,
+    "message": "Presented file",
+    "integration_name": null,
+    "integration_icon_url": null,
+    "display_content": null
+  },
+  {
+    "start_timestamp": "2026-01-16T15:17:30.850045Z",
+    "stop_timestamp": "2026-01-16T15:17:38.725686Z",
+    "flags": null,
+    "type": "text",
+    "text": "He creado la landing page completa para el curso de Gimnasia Cerebral. Incluye:
+
+**Diseño optimizado para Silver Economy (50+):**
+- Tipografía grande (19px base) con fuentes serif elegantes (Crimson Pro) para títulos y sans-serif legible (Source Sans 3) para el cuerpo
+- Paleta de colores cálida y serena: tonos crema, verde salvia y terracota
+- Alto contraste y espaciado generoso
+- Animaciones suaves al hacer scroll
+
+**Las 9 secciones que solicitaste:**
+1. **Hero** con espacio para VSL, badge de confianza y CTA prominente
+2. **Identificación** con 5 puntos de dolor ilustrados con iconos
+3. **Solución** con reencuadre y la frase clave destacada
+4. **Qué es el curso** con 3 características principales + pasos de uso
+5. **Beneficios reales** en sección con fondo verde y cita destacada
+6. **Filtro de audiencia** con tarjetas "Para ti" y "No para ti"
+7. **Garantía** con badge de 7 días y acceso inmediato
+8. **FAQ** con acordeón funcional (5 preguntas)
+9. **CTA final** con cierre emocional
+
+**Funcionalidades:**
+- Acordeón de preguntas frecuentes interactivo
+- Animaciones de aparición al scroll
+- Botones CTA con hover effects
+- Totalmente responsive",
+    "citations": []
+  }
+]
+
+================================================================================
+
+Human:
+Files:
+  - EMA BENEFICIOS (1).png (UUID: 20618b75-1871-4959-b6bc-e1741a80aece, Purpose: inference_image)
+  - EMA EXPLICACION.png (UUID: 2952707a-914c-4546-ba2a-9eeb9525d19f, Purpose: inference_image)
+  - jorgito-ahorro.png (UUID: 2b63fbb6-bac6-4208-9534-da3615f3177c, Purpose: inference_image)
+  - claudia.jpg (UUID: 29e7edc5-393d-4497-988b-6ebd0e9e0350, Purpose: inference_image)
+  - Maria.jpg (UUID: 9cf01027-a76a-4ff9-a77d-0c8400bbff43, Purpose: inference_image)
+  - roberto.jpg (UUID: bfbe1bc2-1f1c-4e8c-a4a7-e4de73588bd6, Purpose: inference_image)
+  - ema milena 3.png (UUID: a8ab1e85-9f77-487f-a232-051f1272110f, Purpose: inference_image)
+  - ema milena 4.png (UUID: 3598aa2a-055a-46f4-83fb-a93813ea24ca, Purpose: inference_image)
+Content:
+[
+  {
+    "start_timestamp": "2026-01-16T15:25:56.837725Z",
+    "stop_timestamp": "2026-01-16T15:25:56.837725Z",
+    "flags": null,
+    "type": "text",
+    "text": "la veo muy simple mejora la experiencia de usuario usa los colores y formas de evolucione https://evolucioneleyendo.com/ te comparto el sitio web para que lo analices falta también una sección de testimonios y de milena Sandoval té paso los enlaces para ir al curso que esta alojado en hotmart https://go.hotmart.com/C103235667V 
+tipografia sora, falta el área de compra y el precio 300 pesos y el enlace para comprar es este https://pay.hotmart.com/C103235667V
+para el encabezado quiero que diga CURSO DE GIMNASIA CEREBRAL PARA ADULTOS subtitulo exponencialmente ágil y te voy a subir mas imagenes para que uses en partes estrategicas
+
+"Al principio no sabía si iba a entender cómo usar el curso. Pero es tan simple que sorprende. Apenas 2 minutos cada día y noto la mente más tranquila, menos ansiosa. Es exactamente lo que necesitaba."
+María Gómez
+
+"La tranquilidad mental es más valiosa de lo que creía. Estos ejercicios me ayudaron a entender que cuidar la mente es como cuidar el cuerpo. Ahora me siento más seguro en mis decisiones diarias."
+Roberto Sánchez
+
+"Lo que me resulta más útil es que es un curso que respeta mi ritmo. No me obliga a nada, pero siento que estoy haciendo algo importante por mí. Eso es lo que buscaba."
+Claudia Morales
+
+
+Quién está detrás de este curso
+Este curso fue diseñado e impartido por Milena Sandoval, especialista en entrenamiento mental con más de dos décadas de experiencia real.
+Su enfoque es práctico y respetuoso. Olvida las promesas mágicas; aquí aprenderás técnicas probadas para mejorar tu coordinación y atención de forma divertida.
+Milena Sandoval
+Especialista en Gimnasia Cerebral • CEO de Evolucione
+https://www.instagram.com/stories/milena2.sandovall/
+
+y mejora todolo que ayude a la experiencia de usuario como es para personas adultas quiero que sea muy simple y facil de entender",
+    "citations": []
+  }
+]
+
+================================================================================
+
+Assistant:
+Content:
+[
+  {
+    "start_timestamp": "2026-01-16T15:26:03.131785Z",
+    "stop_timestamp": "2026-01-16T15:26:04.100646Z",
+    "flags": null,
+    "type": "text",
+    "text": " Voy a analizar el sitio web de Evolucione para captar los colores, estilos y formas de la marca, y luego actualizaré la landing page con todas las mejoras que mencionas.",
+    "citations": []
+  },
+  {
+    "start_timestamp": "2026-01-16T15:26:04.312994Z",
+    "stop_timestamp": "2026-01-16T15:26:04.421356Z",
+    "flags": null,
+    "type": "tool_use",
+    "id": "toolu_014L7SXTFmSZtsjzhFsm1Q3V",
+    "name": "web_fetch",
+    "input": {
+      "url": "https://evolucioneleyendo.com/"
+    },
+    "message": "Fetching: https://evolucioneleyendo.com/",
+    "integration_name": "Web Fetch",
+    "integration_icon_url": null,
+    "context": null,
+    "display_content": null,
+    "approval_options": null,
+    "approval_key": null
+  },
+  {
+    "start_timestamp": null,
+    "stop_timestamp": null,
+    "flags": null,
+    "type": "tool_result",
+    "tool_use_id": "toolu_014L7SXTFmSZtsjzhFsm1Q3V",
+    "name": "web_fetch",
+    "content": [
+      {
+        "type": "knowledge",
+        "title": "Lectura tradicional vs. lectura rápida con comprensión: ¿Qué método realmente mejora tu aprendizaje?",
+        "url": "https://evolucioneleyendo.com/",
+        "metadata": {
+          "type": "webpage_metadata",
+          "site_domain": "evolucioneleyendo.com",
+          "favicon_url": "https://www.google.com/s2/favicons?sz=64&domain=evolucioneleyendo.com",
+          "site_name": "evolucioneleyendo"
+        },
+        "is_missing": false,
+        "text": " 
+
+
+
+
+    
+
+?? 10 años evolucionando la lectura
+
+[![Logo Evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/logo-evolucione-1-scaled.png "Evolucione") ![Logo Evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/logo-evolucione-1-scaled.png "Evolucione")](/)
+
+[Inicio](/)
+
+[Programas](/programas) 
+
+[Evolucione](/programas/evolucione)[Kids](/programas/kids)[Junior](/programas/junior)
+
+[Diagnóstico](/diagnostico)
+
+[Alumnos](#) 
+
+[Agenda tu monitoria](https://alumno.evolucioneclases.com/Login.php)[Realiza tu pago](https://www.evolucioneleyendo.mx/usuarios/index.php)[Ingresa a tu programa](https://www.evolucioneleyendo.mx/curso/)[Ingresa a tu programa junior](https://www.evolucioneleyendo.mx/junior/)[Ingresa a tu programa kids](https://www.evolucioneleyendo.mx/kids/)
+
+[Visítanos](/visitanos)
+
+[Blog](/blog)
+
+[Inscríbete](#) 
+
+[![whatsapp icon](/_astro/whatsapp.BuyqNfZu_Z26Yuiw.svg) Hablemos](https://api.whatsapp.com/send?phone=523311138538&text=Hola, visité su sitio web y me interesa su programa.)
+
+  
+
+[Curso online y presencial](#) 
+
+# LEE UN LIBRO DE 200 PÁGINAS EN 30 MINUTOS
+
+[COMIENZA AHORA](#) 
+
+![Arrow Down](/_astro/arrow-down.DFcHHbFV_Z19ipm5.svg)
+
+**Este mes**  
+30% de descuento
+
+![slider](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Group-237672.png)
+
+[Descubre en nuestro test gratuito](#) 
+
+## QUÉ TAN RÁPIDO LEES REALMENTE
+
+Un mexicano promedio lee entre 150 y 350 palabras por minuto y comprende entre 0% y 60%.
+
+[REALIZA EL TEST](https://evolucioneleyendo.com/evolucione/diagnostico/) 
+
+![Arrow Down](/_astro/arrow-down.DFcHHbFV_Z19ipm5.svg)
+
+Descubre  
+qué tan rápido puedes leer
+
+![slider](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Group-237676.png)
+
+![<h3>Comprende mejor</h3>
+](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/mejor.svg)
+
+### Comprende mejor
+
+Entiende el mensaje de cada texto con claridad y sin esfuerzo.
+
+![<h3>Recuerda más información</h3>
+](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/tiempo.svg)
+
+### Recuerda más información
+
+Retén lo importante en tu memoria y aplícalo cuando lo necesites.
+
+![<h3>Lee más<br />
+en menos tiempo</h3>
+](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/informacion.svg)
+
+### Lee más en menos tiempo
+
+Aumenta tu ritmo lector sin perder comprensión.
+
+DA EL PRIMER PASO  
+RESERVA TU CLASE  
+MUESTRA GRATIS
+
+### Resultados que avalan **nuestra experiencia**
+
+![Usuarios entrenados](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/birrete.svg)
+
+#### +15.000
+
+Usuarios entrenados
+
+![México, Perú y Colombia](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Capa_1.png)
+
+#### 3 países sede
+
+México, Perú y Colombia
+
+![Aplicando la metodología](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/book.svg)
+
+#### +10 años
+
+Aplicando la metodología
+
+### **Nuestro próximo curso** comienza en:
+
+####
+
+ [INSCRÍBETE](#)
+
+## Conoce nuestros **programas**
+
+![](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/logo-evolucione-1-scaled.png)
+
+![<p><span style="font-weight: 400;">(6 a 10 años)<br />
+Para niños que aún no leen o leen menos de 20 palabras por minuto.</span></p>
+](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Kids-1.png)
+
+![<p><strong>(6 a 12 años)</strong></p>
+<p><strong>Para niños que leen entre 20 a 90 palabras por minuto.</strong></p>
+](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Junior.png)
+
+![video](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/profesionales.png)
+
+#### Para lectores que ya superan las 90 palabras por minuto.
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/repeat.svg)
+
+Domina el método PLP (Prelectura, Lectura, Postlectura)
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/increase.svg)
+
+Mide tu progreso real y mejora velocidad + comprensión + retención
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/mejor.svg)
+
+Incluye ejercicios de gimnasia cerebral y talleres
+
+ [DESCUBRE MÁS](https://evolucioneleyendo.com/evolucione/programas/evolucione/)
+
+![video](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/evolucionekids.png)
+
+#### (6 a 10 años)
+
+#### Para niños que aún no leen o leen menos de 20 palabras por minuto
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/noun-senses-3212513.png)
+
+Método multisensorial (Doman + Fonético-gestual)
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/noun-board-game-4449124.png)
+
+Enfoque lúdico con juegos mentales y desarrollo lector
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Capa_1-2.png)
+
+Grupos de máximo 4 niños por sesión
+
+ [DESCUBRE MÁS](https://evolucioneleyendo.com/evolucione/programas/kids/)
+
+![video](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/teengirl.png)
+
+**(6 a 12 años)**
+
+**Para niños que leen entre 20 a 50 palabras por minuto.**
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/velocidad.png)
+
+Entrenamiento en habilidades lectoras velocidad, comprensión y atención.
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Sesiones-1.png)
+
+3 sesiones por semana **(lectura, escritura, lúdica**)
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Tutores.png)
+
+Acompañamiento de pedagogas y psicólogas
+
+ [DESCUBRE MÁS](https://evolucioneleyendo.com/evolucione/programas/junior/)
+
+![](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/logo-evolucione-1-scaled.png) 
+
+![video](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/profesionales.png)
+
+#### Para lectores que ya superan las 90 palabras por minuto.
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/repeat.svg)
+
+Domina el método PLP (Prelectura, Lectura, Postlectura)
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/increase.svg)
+
+Mide tu progreso real y mejora velocidad + comprensión + retención
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/mejor.svg)
+
+Incluye ejercicios de gimnasia cerebral y talleres
+
+ [DESCUBRE MÁS](https://evolucioneleyendo.com/evolucione/programas/evolucione/)
+
+  ![](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Kids-1.png) 
+
+![video](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/evolucionekids.png)
+
+#### (6 a 10 años)
+
+#### Para niños que aún no leen o leen menos de 20 palabras por minuto
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/noun-senses-3212513.png)
+
+Método multisensorial (Doman + Fonético-gestual)
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/noun-board-game-4449124.png)
+
+Enfoque lúdico con juegos mentales y desarrollo lector
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Capa_1-2.png)
+
+Grupos de máximo 4 niños por sesión
+
+ [DESCUBRE MÁS](https://evolucioneleyendo.com/evolucione/programas/kids/)
+
+  ![](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Junior.png) 
+
+![video](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/teengirl.png)
+
+**(6 a 12 años)**
+
+**Para niños que leen entre 20 a 50 palabras por minuto.**
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/velocidad.png)
+
+Entrenamiento en habilidades lectoras velocidad, comprensión y atención.
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Sesiones-1.png)
+
+3 sesiones por semana **(lectura, escritura, lúdica**)
+
+![imagen lista evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/Tutores.png)
+
+Acompañamiento de pedagogas y psicólogas
+
+ [DESCUBRE MÁS](https://evolucioneleyendo.com/evolucione/programas/junior/)
+
+### **Diagnóstico**
+
+![SELECIONA EL TIPO DE PRUEBA QUE QUIERES PRESENTAR](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/acelerado.png)
+
+## ¿Qué tan ágil **es tu mente?**
+
+![imagen juego](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/icon.png)"
+
+### EL PROMEDIO ESTÁ ENTRE 10 Y 15 SEGUNDOS ¿PUEDES SUPERARLO?
+
+# Tabla de Schulte
+
+Encuentra los números del 1 al 16 en orden
+
+0.00s
+
+Reiniciar
+
+## ?? Instrucciones:
+
+* 1️⃣Encuentra los números del **1 al 16** en orden
+* ??Mantén tu vista en el **centro** y usa tu visión periférica
+* ❌Si presionas un número equivocado, se marcará en **rojo**
+* ✅Si aciertas, se marcará en **verde**
+* ⏱️Intenta completarlo lo **más rápido posible**
+
+INICIAR JUEGO
+
+Usa tu visión periférica y mantén el foco en el centro
+
+Medellín / Colombia
+
+### Conoce lo último **de nuestro blog**
+
+[![Lectura tradicional vs. lectura rápida con comprensión: ¿Qué método realmente mejora tu aprendizaje?](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/retrato-de-una-mujer-joven-leyendo-un-libro.png)
+
+Lectura y Métodos de Estudio
+
+### Lectura tradicional vs. lectura rápida con comprensión: ¿Qué método realmente mejora tu aprendizaje?
+
+2025-10-15 14:43:42
+
+Muchos piensan que leer rápido significa hacerlo de forma superficial, mientras otros creen que leer lento garantiza un](/blog/lectura-tradicional-vs-lectura-rapida-con-comprension-que-metodo-realmente-mejora-tu-aprendizaje)[![?? 5 ejercicios de gimnasia cerebral para activar tu enfoque antes de leer](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/bodegon-con-cerebros-humanos.png)
+
+Gimnasia Cerebral
+
+### ?? 5 ejercicios de gimnasia cerebral para activar tu enfoque antes de leer
+
+2025-10-14 16:51:52
+
+¿Te cuesta concentrarte al leer o estudiar? Antes de lanzarte a un texto complejo, activar tu cerebro es clave para mej](/blog/ginmasia-cerebral)[![??¿Tu hijo sabe leer… pero no comprende lo que lee?](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/09/cerca-de-nina-divirtiendose-en-casa.png)
+
+Comprensión Lectora Infantil
+
+### ??¿Tu hijo sabe leer… pero no comprende lo que lee?
+
+2025-09-27 20:04:17
+
+¿Tu hijo puede leer en voz alta, pero cuando le preguntas qué entendió… no sabe explicarlo?Esta situación es mucho](/blog/tu-hijo-sabe-leer)
+
+ [VER TODAS LAS NOTICIAS](true)
+
+## **¿Tienes alguna duda?** Aquí podrías encontrar las respuestas
+
+**¿Desde qué edad puedo tomar el curso de lectura rápida de Evolucione?**
+
+*Tenemos tres programas adaptados para cada etapa lectora:*
+
+* Kids: Niños de 6 a 10 años..No importa si todavía no saben leer: trabajamos habilidades previas y primeros pasos en lectura.
+* Junior: Para niños de 7 a 12 años que leen 20 palabras por minuto.
+* Evolucione: Para quienes leen más de 90 palabras por minuto. A partir de 8 años en adelante
+
+?? *¿No sabes cuántas palabras por minuto lees?* [[Haz el test aquí]](https://colombia.evolucioneleyendo.com/diagnostico/)
+
+ 
+
+### **¿Qué necesito para comenzar el curso de Evolucione?**
+
+*Solo necesitas:*
+
+* Una computadora, laptop o tablet con pantalla de mínimo 11 pulgadas.
+* Acceso a internet (de preferencia WiFi para mejor estabilidad).
+* Ganas de mejorar tu velocidad, comprensión y memoria al leer.
+* Manejo de las herramientas tecnológicas
+
+ 
+
+### **¿Qué es la gimnasia cerebral y cómo la usamos en Evolucione?**
+
+*Es una serie de ejercicios que activan los hemisferios cerebrales y mejoran la concentración, la memoria y la agilidad mental. En Evolucione la usamos como base en cada sesión para preparar tu mente antes de entrenar nuevas técnicas de lectura y aprendizaje.*
+
+ 
+
+### **¿En cuánto tiempo veo cambios reales?**
+
+*Con la práctica constante del método PLP, en pocas semanas comienzas a notar una mejora clara en tu velocidad y comprensión. Para la tercera semana, la mayoría de los usuarios ya ha duplicado su velocidad de lectura inicial manteniendo o mejorando la comprensión.*
+
+ 
+
+### **¿Funciona para cualquier tipo de lectura?**
+
+*Sí. En Evolucione aplicas el método PLP y aprendes técnicas distintas para cada tipo de texto: libros, material de estudio, documentos de trabajo y lectura digital. Incluso puedes usar las estrategias si lees en otro idioma.*
+
+ 
+
+### **¿Siempre tendré que leer rápido?**
+
+*No. El objetivo de Evolucione no es leer rápido todo el tiempo, sino darte la habilidad de controlar tu ritmo según el tipo de texto y el objetivo de la lectura*
+
+ 
+
+### **¿Qué ejercicios hago en casa?**
+
+En Evolucione impulsas tu desarrollo cada día con una rutina poderosa y efectiva. Realizas dos ejercicios prácticos de lectura, de unos 15 minutos cada uno, que fortalecen tu agilidad mental. A esto se suma un reto diario de gimnasia cerebral y una lectura de 15 minutos para aplicar lo aprendido en textos reales. ¡Verás cómo avanzas paso a paso hacia tu mejor versión!
+
+ 
+
+**¿Qué hace diferente a Evolucione de otros programas?**
+
+*Con nuestro método PLP (Prelectura, Lectura y Postlectura), combinarás diversas técnicas de lectura y aplicarás estrategias de comprensión que te permitirán desarrollar el pensamiento crítico y descubrir la mejor manera de estructurar la información.*
+
+ 
+
+**¿Cuáles son los tipos de apoyo o seguimiento que reciben los alumnos?**
+
+Recibes monitorías semi personalizadas, seguimiento semanal de tu progreso en la plataforma y retroalimentación directa de un especialista. Además, cuentas con una línea de atención internacional que canaliza tus requerimientos y te brinda el acompañamiento que necesitas para alcanzar tus objetivos.
+
+ 
+
+**¿Puedo combinar el curso con mis estudios o trabajo?**
+
+**Evolucione está diseñado para adaptarse a tu rutina.** Las prácticas son breves y puedes realizarlas en cualquier momento del día. Lo aprendido se traduce en mejoras reales para estudiar o trabajar de forma más eficiente.
+
+ 
+
+[![Logo Evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/logo-evolucione-1-scaled.png "Evolucione") ![Logo Evolucione](https://evolucioneleyendo.com/administrador/wp-content/uploads/2025/10/evolucione-logo-blanco-scaled.png "Evolucione")](/) 
+
+[Inicio](/)
+
+[Programas](/programas)
+
+[Diagnóstico](/diagnostico)
+
+[Alumnos](#)
+
+[Visítanos](/visitanos)
+
+[Blog](/blog)
+
+[Políticas de tratamiento de datos](https://evolucioneleyendo.com/politicas/)  hola@evolucioneleyendo.com
+
+[![whatsapp icon](/_astro/whatsapp.BuyqNfZu_Z26Yuiw.svg) Hablemos 523311138538](https://api.whatsapp.com/send?phone=523311138538&text=Hola, visité su sitio web y me interesa su programa.)
+
+ [Inscríbete](#)
+
+ 
+
+X
+
+![modal](/_astro/imagen-modal.B4zdA7Cb_Z12IDOV.webp)
+
+Solicita más información y **obtén un descuento especial**
+
+  ",
+        "is_citable": true,
+        "prompt_context_metadata": {
+          "mime_type": "text/html",
+          "content_type": "html",
+          "destination_url": "https://evolucioneleyendo.com/"
+        }
+      }
+    ],
+    "is_error": false,
+    "structured_content": null,
+    "meta": null,
+    "message": "Fetched: Lectura tradicional vs. lectura rápida con comprensión: ¿Qué método realmente mejora tu aprendizaje?",
+    "integration_name": "Web Fetch",
+    "integration_icon_url": "https://www.google.com/s2/favicons?sz=64&domain=evolucioneleyendo.com",
+    "display_content": {
+      "type": "rich_link",
+      "link": {
+        "title": "Lectura tradicional vs. lectura rápida con comprensión: ¿Qué método realmente mejora tu aprendizaje?",
+        "subtitles": null,
+        "url": "https://evolucioneleyendo.com/",
+        "resource_type": null,
+        "icon_url": "https://www.google.com/s2/favicons?sz=64&domain=evolucioneleyendo.com",
+        "source": "evolucioneleyendo"
+      },
+      "is_trusted": false
+    }
+  },
+  {
+    "start_timestamp": "2026-01-16T15:26:10.133841Z",
+    "stop_timestamp": "2026-01-16T15:26:13.192924Z",
+    "flags": null,
+    "type": "text",
+    "text": "Ahora tengo los colores y estilos de Evolucione. Voy a crear la landing page actualizada con:
+- Colores vibrantes de la marca (magenta/rosa, naranja, cyan/turquesa)
+- Tipografía Sora
+- Las imágenes que subiste
+- Sección de testimonios
+- Sección de Milena Sandoval
+- Área de compra con precio $300 MXN
+- Diseño más simple y amigable para adultos mayores",
+    "citations": []
+  },
+  {
+    "start_timestamp": "2026-01-16T15:26:13.459553Z",
+    "stop_timestamp": "2026-01-16T15:26:15.148105Z",
+    "flags": null,
+    "type": "tool_use",
+    "id": "toolu_012GFBNwUbiZkvN9h2DuyuJs",
+    "name": "bash_tool",
+    "input": {
+      "command": "cp /mnt/user-data/uploads/*.png /mnt/user-data/uploads/*.jpg /home/claude/ 2>/dev/null; ls -la /home/claude/*.png /home/claude/*.jpg 2>/dev/null || echo "Copiando imágenes..."",
+      "description": "Copiar las imágenes subidas al directorio de trabajo"
+    },
+    "message": "Copiar las imágenes subidas al directorio de trabajo",
+    "integration_name": null,
+    "integration_icon_url": null,
+    "context": null,
+    "display_content": {
+      "type": "json_block",
+      "json_block": "{"language": "bash", "code": "cp /mnt/user-data/uploads/*.png /mnt/user-data/uploads/*.jpg /home/claude/ 2>/dev/null; ls -la /home/claude/*.png /home/claude/*.jpg 2>/dev/null || echo \"Copiando im\u00e1genes...\""}"
+    },
+    "approval_options": null,
+    "approval_key": null
+  },
+  {
+    "start_timestamp": null,
+    "stop_timestamp": null,
+    "flags": null,
+    "type": "tool_result",
+    "tool_use_id": "toolu_012GFBNwUbiZkvN9h2DuyuJs",
+    "name": "bash_tool",
+    "content": [
+      {
+        "type": "text",
+        "text": "{"returncode":0,"stdout":"-r--r--r-- 1 root root 160958 Jan 16 15:26 /home/claude/EMA_BENEFICIOS__1_.png\n-r--r--r-- 1 root root 192670 Jan 16 15:26 /home/claude/EMA_EXPLICACION.png\n-r--r--r-- 1 root root 190055 Jan 16 15:26 /home/claude/Maria.jpg\n-r--r--r-- 1 root root 220249 Jan 16 15:26 /home/claude/claudia.jpg\n-r--r--r-- 1 root root 117762 Jan 16 15:26 /home/claude/ema_milena_3.png\n-r--r--r-- 1 root root  71402 Jan 16 15:26 /home/claude/ema_milena_4.png\n-r--r--r-- 1 root root  38374 Jan 16 15:26 /home/claude/jorgito-ahorro.png\n-r--r--r-- 1 root root 439052 Jan 16 15:26 /home/claude/roberto.jpg\n","stderr":""}",
+        "uuid": "61d66ee2-50af-484e-a8a8-85d308da63e7"
+      }
+    ],
+    "is_error": false,
+    "structured_content": null,
+    "meta": null,
+    "message": null,
+    "integration_name": null,
+    "integration_icon_url": null,
+    "display_content": {
+      "type": "json_block",
+      "json_block": "{"returncode":0,"stdout":"-r--r--r-- 1 root root 160958 Jan 16 15:26 /home/claude/EMA_BENEFICIOS__1_.png\n-r--r--r-- 1 root root 192670 Jan 16 15:26 /home/claude/EMA_EXPLICACION.png\n-r--r--r-- 1 root root 190055 Jan 16 15:26 /home/claude/Maria.jpg\n-r--r--r-- 1 root root 220249 Jan 16 15:26 /home/claude/claudia.jpg\n-r--r--r-- 1 root root 117762 Jan 16 15:26 /home/claude/ema_milena_3.png\n-r--r--r-- 1 root root  71402 Jan 16 15:26 /home/claude/ema_milena_4.png\n-r--r--r-- 1 root root  38374 Jan 16 15:26 /home/claude/jorgito-ahorro.png\n-r--r--r-- 1 root root 439052 Jan 16 15:26 /home/claude/roberto.jpg\n","stderr":""}"
+    }
+  },
+  {
+    "start_timestamp": "2026-01-16T15:26:24.388762Z",
+    "stop_timestamp": "2026-01-16T15:29:48.759328Z",
+    "flags": null,
+    "type": "tool_use",
+    "id": "toolu_01DdAbHdEXKLnECYDMvUw8q4",
+    "name": "create_file",
+    "input": {
+      "path": "/home/claude/gimnasia-cerebral-v2.html",
+      "file_text": "<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de Gimnasia Cerebral para Adultos | Evolucione</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -244,18 +2617,10 @@
 
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }
 
         .play-btn {
@@ -1318,8 +3683,6 @@
             <div class="video-wrapper">
                 <div class="video-container">
                     <iframe 
-                        width="100%" 
-                        height="100%" 
                         src="https://www.youtube.com/embed/0edke-GiNw8?rel=0" 
                         title="Curso de Gimnasia Cerebral para Adultos" 
                         frameborder="0" 
@@ -1683,7 +4046,7 @@
     <section class="pricing" id="comprar">
         <div class="container">
             <div class="pricing__card animate-on-scroll">
-                <div class="pricing__badge">🎉 Oferta de Lanzamiento</div>
+                <div class="pricing__badge">?? Oferta de Lanzamiento</div>
                 <h2 class="pricing__title">Acceso completo al curso</h2>
                 
                 <div class="pricing__price">
@@ -1864,12 +4227,12 @@
             <p>
                 <a href="#">Términos y Condiciones</a> · 
                 <a href="#">Política de Privacidad</a> · 
-                <a href="/cdn-cgi/l/email-protection#3d5552515c7d584b5251485e5452535851584458535952135e5250">Contacto</a>
+                <a href="mailto:hola@evolucioneleyendo.com">Contacto</a>
             </p>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // FAQ Accordion
         document.querySelectorAll('.faq-item__question').forEach(button => {
             button.addEventListener('click', () => {
@@ -1911,4 +4274,13 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        beh
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
